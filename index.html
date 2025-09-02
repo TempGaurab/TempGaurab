@@ -449,6 +449,32 @@
         border-radius: 10px;
         object-fit: cover; /* crops nicely if needed */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        cursor: pointer;
+      }
+
+      .certificate-image:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        position: relative;
+      }
+
+      .certificate-image:active {
+        transform: scale(1.3);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+      }
+
+      .certificate-image.clicked {
+        transform: scale(1.5);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        z-index: 50;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.5);
+        border-radius: 15px;
+        transition: all 0.5s ease;
       }
 
       .certificate-title {
@@ -611,6 +637,7 @@
           <div class="profile-content">
             <img src="profile.jpg" alt="Profile Photo" class="profile-image" />
             <h1 class="profile-name">Gaurab Baral</h1>
+            <i><p class="profile-position">baralg1@nku.edu</p></i>
             <p class="profile-title">Northern Kentucky University</p>
             <p class="profile-position">
               Undergraduate Student in Data Science
@@ -999,6 +1026,29 @@
             </p>
 
             <div class="certificate-grid">
+              <div class="certificate-item">
+                <img
+                  src="iccida.jpg"
+                  alt="Certificate of Presenting at ICCIDA Conference "
+                  class="certificate-image"
+                />
+                <div class="certificate-title">
+                  Certificate of Presenting at ICCIDA Conference for the Sticker
+                  Sales Regression Paper.
+                </div>
+              </div>
+
+              <div class="certificate-item">
+                <img
+                  src="kcfc.jpg"
+                  alt="Certificate of Presenting at KCFC Conference  "
+                  class="certificate-image"
+                />
+                <div class="certificate-title">
+                  Certificate of Presenting at KCFC conference for
+                  "Cybersecurity Job Analysis" Paper.
+                </div>
+              </div>
               <!-- Certificate Item -->
               <div class="certificate-item">
                 <img
@@ -1023,29 +1073,26 @@
                   Recommendation Paper
                 </div>
               </div>
-
               <div class="certificate-item">
                 <img
-                  src="MRS_ICMI.jpg"
-                  alt="Certificate of Presenting at ICMI Conference "
+                  src="dsc_club.jpg"
+                  alt="Certificate of being the best contributor for the Data Science Club "
                   class="certificate-image"
                 />
                 <div class="certificate-title">
-                  Certificate of Presenting at ICMI Conference for the Movie
-                  Recommendation Paper
+                  Recognition as the outstanding contributor for NKU Data
+                  Science Club.
                 </div>
-              </div>>
               </div>
-
               <div class="certificate-item">
                 <img
-                  src="images/python-data-science.jpg"
-                  alt="Python for Data Science"
+                  src="nvidia.jpg"
+                  alt="Certificate of NVIDIA Fundamentals of Deep Learning  "
                   class="certificate-image"
                 />
-                <div class="certificate-title">Python for Data Science</div>
-                <div class="certificate-description">
-                  IBM — Python, pandas, numpy, matplotlib for data analysis.
+                <div class="certificate-title">
+                  Certificate of completion of NVIDIA's Fundamentals of Deep
+                  Learning.
                 </div>
               </div>
             </div>
@@ -1126,7 +1173,7 @@
         // Set initial active link
         updateActiveNavLink();
 
-        // Enhanced hover effects
+        // Enhanced hover effects for non-image items
         const projectItems = document.querySelectorAll(".project-item");
         const publicationItems = document.querySelectorAll(".publication-item");
         const newsItems = document.querySelectorAll(".news-item");
