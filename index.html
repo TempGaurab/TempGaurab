@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaurab Baral</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+        font-weight: 400;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Navigation */
+      nav {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(230, 126, 34, 0.1);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.02em;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        padding: 0.5rem 0;
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #e67e22, #f39c12);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #e67e22;
+      }
+
+      /* Main Content */
+      .main-content {
+        margin-top: 80px;
+      }
+
+      /* Profile Header Section */
+      .profile-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .profile-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+      }
+
+      .profile-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .profile-image {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        margin: 0 auto 2rem;
+        display: block;
+        object-fit: cover;
+        border: 5px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .profile-image:hover {
+        transform: scale(1.05);
+      }
+
+      .profile-name {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+      }
+
+      .profile-title {
+        font-size: 1.3rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+        opacity: 0.9;
+      }
+
+      .profile-position {
+        font-size: 1.1rem;
+        font-weight: 500;
+        opacity: 0.8;
+        margin-bottom: 2rem;
+      }
+
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .contact-links a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .contact-links a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+
+      /* Section Styling */
+      .section {
+        background: white;
+        margin: 2rem 0;
+        padding: 3rem 0;
+        border-radius: 15px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        position: relative;
+      }
+
+      .section-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .section h2 {
+        font-family: "Playfair Display", serif;
+        color: #2c3e50;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-align: center;
+        position: relative;
+        letter-spacing: -0.02em;
+      }
+
+      .section h2::after {
+        content: "";
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, #e67e22, #f39c12);
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .intro-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 2rem;
+        text-align: justify;
+      }
+
+      /* Research Interests */
+      .research-interests {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin: 3rem 0;
+      }
+
+      .interests-column h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+      }
+
+      .interests-column ul {
+        list-style: none;
+      }
+
+      .interests-column li {
+        margin-bottom: 1rem;
+        color: #555;
+        position: relative;
+        padding-left: 1.5rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+      }
+
+      .interests-column li::before {
+        content: "▸";
+        color: #e67e22;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .interests-column li:hover {
+        color: #e67e22;
+        transform: translateX(5px);
+        cursor: default;
+      }
+
+      /* Current Projects */
+      .project-list {
+        margin-top: 2rem;
+      }
+
+      .project-item {
+        background: #f8f9fa;
+        border-left: 4px solid #e67e22;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 0 8px 8px 0;
+        transition: all 0.3s ease;
+      }
+
+      .project-item:hover {
+        background: #f1f3f4;
+        transform: translateX(5px);
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-item strong {
+        color: #e67e22;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 1.05rem;
+      }
+
+      /* News Items */
+      .news-item {
+        border-bottom: 1px solid #eee;
+        padding: 2rem 0;
+        transition: all 0.3s ease;
+      }
+
+      .news-item:hover {
+        background: rgba(230, 126, 34, 0.02);
+        margin: 0 -2rem;
+        padding: 2rem;
+        border-radius: 8px;
+      }
+
+      .news-item:last-child {
+        border-bottom: none;
+      }
+
+      .news-date {
+        color: #e67e22;
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+        font-size: 1rem;
+        letter-spacing: 0.05em;
+      }
+
+      .news-content {
+        color: #555;
+        line-height: 1.7;
+        font-size: 1rem;
+      }
+
+      .news-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .news-images img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .news-images img:hover {
+        transform: scale(1.03) translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Publications */
+      .publication-list {
+        margin-top: 2rem;
+      }
+
+      .publication-item {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: #fafbfc;
+        border-radius: 8px;
+        border-left: 3px solid #e67e22;
+        transition: all 0.3s ease;
+      }
+
+      .publication-item:hover {
+        background: #f5f6f7;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .publication-item strong {
+        color: #e67e22;
+        font-weight: 600;
+      }
+
+      .publication-item em {
+        color: #666;
+        font-style: italic;
+      }
+
+      /* Teaching & Service Lists */
+      .styled-list {
+        margin-top: 1.5rem;
+      }
+
+      .styled-list h3 {
+        font-family: "Playfair Display", serif;
+        color: #2c3e50;
+        margin: 2rem 0 1rem 0;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      .styled-list ul {
+        list-style: none;
+        margin-left: 0;
+      }
+
+      .styled-list li {
+        margin-bottom: 1rem;
+        padding: 1rem 1.5rem;
+        background: rgba(230, 126, 34, 0.05);
+        border-radius: 8px;
+        border-left: 3px solid #e67e22;
+        transition: all 0.3s ease;
+      }
+
+      .styled-list li:hover {
+        background: rgba(230, 126, 34, 0.1);
+        transform: translateX(5px);
+      }
+
+      .styled-list strong {
+        color: #e67e22;
+        font-weight: 600;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .profile-name {
+          font-size: 2.5rem;
+        }
+
+        .profile-title {
+          font-size: 1.1rem;
+        }
+
+        .nav-links {
+          gap: 1.5rem;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .research-interests {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .news-images {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-links {
+          gap: 1rem;
+        }
+
+        .section h2 {
+          font-size: 2rem;
+        }
+
+        .section-content {
+          padding: 0 1rem;
+        }
+      }
+
+      /* Scroll animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Smooth scroll offset for fixed nav */
+      .section {
+        scroll-margin-top: 100px;
+      }
+
+      /* Enhanced typography */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      p {
+        font-weight: 400;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="container">
+        <div class="nav-container">
+          <ul class="nav-links">
+            <li><a href="#about" class="nav-link">About Me</a></li>
+            <li><a href="#research" class="nav-link">Research</a></li>
+            <li><a href="#news" class="nav-link">News</a></li>
+            <li><a href="#publications" class="nav-link">Publications</a></li>
+            <li><a href="#teaching" class="nav-link">Teaching</a></li>
+            <li><a href="#service" class="nav-link">Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-content">
+      <!-- Profile Header -->
+      <header class="profile-header">
+        <div class="container">
+          <div class="profile-content">
+            <img src="profile.jpg" alt="Profile Photo" class="profile-image" />
+            <h1 class="profile-name">Gaurab Baral</h1>
+            <p class="profile-title">Northern Kentucky University</p>
+            <p class="profile-position">
+              Undergraduate Student in Data Science
+            </p>
+
+            <div class="contact-links">
+              <a href="mailto:gaurabusa@gmail.com">📧 Email</a>
+              <a href="https://www.linkedin.com/in/gaurab-baral-991333216/"
+                >💼 LinkedIn</a
+              >
+              <a
+                href="https://scholar.google.com/citations?user=N0TDR9AAAAAJ&hl=en&oi=ao"
+                >🎓 Google Scholar</a
+              >
+              <a href="https://orcid.org/0009-0009-5849-1360">🔗 ORCID</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- About Section -->
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-content fade-in">
+            <h2>About Me</h2>
+            <p class="intro-text">
+              I am a Data Science major at Northern Kentucky University, with
+              strong academic performance, leadership experience, and research
+              involvement. I am also minoring in Computer Science, Statistics
+              and Biological Sciences. I serve as President of the Data Science
+              Club, tutor mathematics and statistics, and actively contribute to
+              research in the College of Informatics.
+            </p>
+
+            <div class="research-interests">
+              <div class="interests-column">
+                <h3>Research Interests</h3>
+                <ul>
+                  <li>Machine Learning & AI</li>
+                  <li>Natural Language Processing</li>
+                  <li>Computer Vision</li>
+                </ul>
+              </div>
+              <div class="interests-column">
+                <h3>Areas of Focus</h3>
+                <ul>
+                  <li>Deep Learning</li>
+                  <li>Data Science & Analytics</li>
+                  <li>Applications of Artificial Intelligence</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- Research Section -->
+<section id="research" class="section">
+  <div class="container">
+    <div class="section-content fade-in">
+      <h2>Research</h2>
+      <p class="intro-text">
+        My research explores applications of data science, artificial intelligence, 
+        and statistical modeling across diverse domains, including healthcare, human-computer interaction, 
+        and labor market analysis.
+      </p>
+
+      <h3
+        style="
+          font-family: 'Playfair Display', serif;
+          color: #2c3e50;
+          margin: 2rem 0 1.5rem 0;
+          font-size: 1.4rem;
+        "
+      >
+        Publications & Projects
+      </h3>
+
+      <div class="project-list">
+        <div class="project-item">
+          <strong>Recommendation Systems</strong>  
+          Hybrid based filtering that combined content, collaborative and deep learning based recommendation systems.
+        </div>
+
+        <div class="project-item">
+          <strong>Drowsiness Detection</strong>  
+          Eye Region as Region of Interest and Use of CNN to detect drowsiness among drivers.
+        </div>
+
+        <div class="project-item">
+          <strong>Complex Regression Analysis</strong> 
+          Applied hybrid regression techniques by stacking multiple tree-based and deep learning models to predict complex quantitative outcomes. 
+        </div>
+
+        <div class="project-item">
+          <strong>Job Market Analysis</strong>  
+          Applied LDA and natural language processing and data visualization to analyze 
+          global job postings related to Cybersecurity and Artifical Intelligence.
+        </div>
+      </div>
+      </section>
+
+      <!-- News Section -->
+      <section id="news" class="section">
+        <div class="container">
+          <div class="section-content fade-in">
+            <h2>News</h2>
+
+            <div class="news-item">
+              <div class="news-date">2025.08</div>
+              <div class="news-content">
+                Started my senior year at Northern Kentucky University with a
+                focus on advanced machine learning coursework and thesis
+                research preparation.
+              </div>
+            </div>
+
+            <div class="news-item">
+              <div class="news-date">2025.06</div>
+              <div class="news-content">
+                Successfully completed summer internship at a local tech
+                company, working on data analytics projects and gaining valuable
+                industry experience.
+              </div>
+            </div>
+
+            <div class="news-item">
+              <div class="news-date">2025.05</div>
+              <div class="news-content">
+                Presented my research project on
+                <em
+                  >"Machine Learning Applications in Environmental Data
+                  Analysis"</em
+                >
+                at the NKU Student Research Conference. Great experience sharing
+                my work with the academic community!
+                <div class="news-images">
+                  <img
+                    src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop"
+                    alt="Research Presentation"
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1523050854058-8df90110c9d1?w=400&h=300&fit=crop"
+                    alt="Research Conference"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="news-item">
+              <div class="news-date">2025.01</div>
+              <div class="news-content">
+                Elected as President of the Data Science Club at NKU! Looking
+                forward to organizing workshops, guest lectures, and
+                collaborative projects for fellow students interested in data
+                science and AI.
+                <div class="news-images">
+                  <img
+                    src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=400&h=300&fit=crop"
+                    alt="Club Meeting"
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop"
+                    alt="Workshop Session"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Publications Section -->
+<!-- Publications Section -->
+<section id="publications" class="section">
+  <div class="container">
+    <div class="section-content fade-in">
+      <h2>Publications</h2>
+
+      <h3
+        style="
+          font-family: 'Playfair Display', serif;
+          color: #2c3e50;
+          margin: 2rem 0 1.5rem 0;
+          font-size: 1.4rem;
+        "
+      >
+        Research Papers
+      </h3>
+
+      <div class="publication-list">
+        <div class="publication-item">
+          <strong>Baral, G.</strong> & Zhou, J. (2024). 
+          "A Hybrid Regression Method for Predicting Housing Prices." 
+          <em>AHFE International Conference, AHFE Open Access, vol 159</em>.  
+          DOI: <a href="http://doi.org/10.54941/ahfe1005725" target="_blank">10.54941/ahfe1005725</a>
+        </div>
+
+        <div class="publication-item">
+          <strong>Baral, G.</strong> & Zhou, J. (2024). 
+          "A Data-Driven Analysis of Cybersecurity Job Market Trends." 
+          <em>Proceedings of the Kentucky Cybersecurity & Forensics Conference (KCFC 2024)</em>.  
+          (Upcoming publication)
+        </div>
+
+        <div class="publication-item">
+          <strong>Baral, G.</strong>,Shrestha, S., Shrestha, A., Lama, N., Zhou, J. (2024). 
+          "Drowsiness Detection Using Convolutional Neural Network with Eye Feature Analysis." 
+          <em>IEEE 4th International Conference on Computing and Machine Intelligence</em>.  
+          (Upcoming publication)
+        </div>
+
+        <div class="publication-item">
+          <strong>Baral, G.</strong> & Zhou, J. (2024). 
+          "Exploring Movie Recommendation Systems: A Text Mining based Overview." 
+          <em>IEEE 4th International Conference on Computing and Machine Intelligence</em>.  
+          (Upcoming publication)
+        </div>
+
+        <div class="publication-item">
+          <strong>Baral, G.</strong> & Zhou, J. (2025). 
+          "Forecasting Sticker Sales: A Comprehensive Analysis Using Regression Models." 
+          <em>Processinds of the 4th International Conference on Computing, IoT and Data Analytics  </em>.  
+          (Upcoming publication)
+        </div>
+
+        <div class="publication-item">
+          <strong>Baral, G.</strong>, Sah, M., Khanal, A., Dhonju, A., & Shrestha, S. (2025).
+          "AutoEyeFT: A Human-in-the-Loop Continuous Learning Pipeline for Robust Drowsiness Detection via Eye Region Analysis " 
+          <em>Processinds of the International Conference on Artificial Intelligence, Blockchain, and Internet of Things  </em>.  
+          (Upcoming publication)
+        </div>
+
+        <div class="publication-item">
+          <strong>Baral, G.</strong>, Sah, M., Khanal, A., Dhonju, A., & Shrestha, S. (2025).
+          "Enhancing Emotion Classification with Human-in-the-Loop Verification for Facial Expression Recognition" 
+          <em>Processinds of the International Conference on Artificial Intelligence, Blockchain, and Internet of Things  </em>.  
+          (Upcoming publication)
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- Teaching Section -->
+      <section id="teaching" class="section">
+        <div class="container">
+          <div class="section-content fade-in">
+            <h2>Teaching</h2>
+
+            <div class="styled-list">
+              <h3>Teaching Assistant</h3>
+              <ul>
+                <li>
+                  <strong>INF 101</strong> Introductory Python Programming for the fall of 2023, supporting a class of 32 students by
+providing tutoring, grading assignments, and facilitating lab sessions.
+                </li>
+                <li>
+                  <strong>DSC 101</strong>  Introductory Data Science for the fall of 2024, aiding 26 students by helping with coursework,
+conducting review sessions, and grading exams.
+                </li>
+                <li>
+                  <strong>Statistics Tutor</strong> Tutored undergraduate students in statistical concepts, regression analysis, and hypothesis testing, improving comprehension and academic performance through one-on-one and group sessions.
+                </li>
+              </ul>
+
+              <h3>Workshop Leadership</h3>
+              <ul>
+                <li>
+                  <strong>Python Programming Workshops:</strong> Leading weekly
+                  programming sessions for Data Science Club members, covering
+                  basics to advanced topics.
+                </li>
+                <li>
+                  <strong>Machine Learning Study Groups:</strong> Organizing
+                  collaborative learning sessions for students interested in ML
+                  algorithms and applications as a part of the Data Science Club at NKU.
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Service Section -->
+      <section id="service" class="section">
+        <div class="container">
+          <div class="section-content fade-in">
+            <h2>Service</h2>
+
+            <div class="styled-list">
+              <h3>University Service</h3>
+              <ul>
+                <li>
+                  <strong>President, Data Science Club:</strong> Formed the student-led Data Science Club in the College of Informatics,
+                  organizing events and fostering collaboration among students.
+                </li>
+                <li>
+                  <strong>Student Representative:</strong> Serving on the
+                  College of Informatics Student Advisory Board, representing
+                  undergraduate student interests and concerns.
+                </li>
+              </ul>
+
+              <h3>Community Outreach</h3>
+              <ul>
+                <li>
+                  <strong>STEM Outreach Volunteer:</strong> Participating in
+                  local high school visits to promote STEM education and data
+                  science career paths.
+                </li>
+                <li>
+                  <strong>Coding Workshop Instructor:</strong> Teaching basic
+                  programming skills to community members through public library
+                  workshops.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      // Smooth scrolling navigation
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Remove active class from all nav links
+            navLinks.forEach((nav) => nav.classList.remove("active"));
+
+            // Add active class to clicked nav link
+            this.classList.add("active");
+
+            // Get target section
+            const targetId = this.getAttribute("href");
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+              targetSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+
+        // Update active nav link based on scroll position
+        function updateActiveNavLink() {
+          const sections = document.querySelectorAll("section[id]");
+          const scrollPos = window.scrollY + 150; // Offset for fixed header
+
+          sections.forEach((section) => {
+            const top = section.offsetTop;
+            const bottom = top + section.offsetHeight;
+            const id = section.getAttribute("id");
+
+            if (scrollPos >= top && scrollPos <= bottom) {
+              navLinks.forEach((link) => link.classList.remove("active"));
+              const activeLink = document.querySelector(`a[href="#${id}"]`);
+              if (activeLink) {
+                activeLink.classList.add("active");
+              }
+            }
+          });
+        }
+
+        // Scroll animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        const fadeElements = document.querySelectorAll(".fade-in");
+        fadeElements.forEach((el) => observer.observe(el));
+
+        // Update nav on scroll
+        window.addEventListener("scroll", updateActiveNavLink);
+
+        // Set initial active link
+        updateActiveNavLink();
+
+        // Enhanced hover effects
+        const projectItems = document.querySelectorAll(".project-item");
+        const publicationItems = document.querySelectorAll(".publication-item");
+        const newsItems = document.querySelectorAll(".news-item");
+
+        [...projectItems, ...publicationItems, ...newsItems].forEach((item) => {
+          item.addEventListener("mouseenter", function () {
+            this.style.cursor = "default";
+          });
+        });
+
+        // Profile image interaction
+        const profileImg = document.querySelector(".profile-image");
+        if (profileImg) {
+          profileImg.addEventListener("click", function () {
+            this.style.animation = "pulse 0.6s ease-in-out";
+            setTimeout(() => {
+              this.style.animation = "";
+            }, 600);
+          });
+        }
+      });
+
+      // Add pulse animation for profile image
+      const style = document.createElement("style");
+      style.textContent = `
+        @keyframes pulse {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+          100% { transform: scale(1); }
+        }
+      `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>
