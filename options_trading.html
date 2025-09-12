@@ -126,9 +126,6 @@
         padding: 20px 25px;
         border-radius: 16px;
         margin-top: 20px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(15px);
-        border: 2px solid rgba(255, 255, 255, 0.8);
         max-width: 100%;
         width: 100%;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -137,6 +134,18 @@
       .explanation.show {
         display: block;
         animation: slideInUp 0.5s ease-out;
+      }
+
+      .explanation.correct {
+        background: rgba(46, 204, 113, 0.95); /* Green for correct */
+        border: 2px solid rgba(39, 174, 96, 0.8);
+        backdrop-filter: blur(15px);
+      }
+
+      .explanation.incorrect {
+        background: rgba(231, 76, 60, 0.95); /* Red for incorrect */
+        border: 2px solid rgba(192, 57, 43, 0.8);
+        backdrop-filter: blur(15px);
       }
 
       .explanation h3 {
@@ -602,6 +611,7 @@
             "This is smart investing! A call option lets you profit if a stock goes up, but you only lose the small premium you paid if it doesn't. It's like paying a small fee to reserve the right to buy something at today's price even if it gets more expensive later. You're making calculated risks with limited downside.",
           rightExplanation:
             "This is gambling, not investing. Scratch-offs have terrible odds (usually you lose 50-70% of what you spend). The lottery is designed to take your money, not help you build wealth. Instead of hoping to get lucky, learn to make your money work for you through real investments.",
+          correct: "left",
         },
         {
           left: "Invest in a 'sure thing' pyramid scheme promising endless recruits",
@@ -611,6 +621,7 @@
             "Pyramid schemes always collapse! They make money by recruiting new people, not selling real products. The only people who profit are those at the top who started early. By the time you hear about a 'great opportunity,' you're likely to lose your money when it inevitably falls apart.",
           rightExplanation:
             "This is an advanced but legitimate strategy. You collect money upfront and keep it if the stock doesn't fall below your chosen price. It's like being paid to promise you'll buy something if it gets cheaper. However, this requires good research and understanding of the risks involved.",
+          correct: "right",
         },
         {
           left: "Understand strike price as the fixed price you can buy or sell at with an option, helping you plan your trades like setting a goal score",
@@ -620,6 +631,7 @@
             "Learning strike prices helps you make informed decisions. It's the price at which you can exercise your option. Understanding this concept helps you pick the right options for your strategy and manage risk effectively. Knowledge is power in investing!",
           rightExplanation:
             "Expensive sneakers are terrible investments. They lose most of their value immediately and continue depreciating. Unless they become rare collectibles (very unlikely), you're essentially burning money. That $200 could be invested and potentially grow to thousands over time through compound interest.",
+          correct: "left",
         },
         {
           left: "Learn about expiration dates, when options end, so you time your trades wisely like planning a homework deadline",
@@ -629,6 +641,7 @@
             "Timing matters in options! Every option has an expiration date, and understanding this helps you plan your strategy. Options lose value as they approach expiration, so knowing these dates helps you decide when to buy, sell, or exercise your options.",
           rightExplanation:
             "Social media 'tips' are often scams or uninformed opinions. People posting these rarely have your best interests in mind - they might be trying to manipulate stock prices or sell you something. Always research investments yourself using reliable sources before risking your money.",
+          correct: "left",
         },
         {
           left: "Max out a credit card on video game loot boxes for a slim chance at rare items",
@@ -638,6 +651,7 @@
             "Loot boxes are gambling disguised as gaming. You're paying real money for random digital items with no real value. Plus, using credit cards means you're paying interest on these worthless purchases. This creates debt while giving you nothing of lasting value.",
           rightExplanation:
             "The premium is the price of the option - your maximum loss if things go wrong. It's like paying for insurance: you pay a small amount to protect against or profit from larger price movements. This limited risk makes options attractive when used properly.",
+          correct: "right",
         },
         {
           left: "Lend money to friends with no plan to get it back, just because they asked nicely",
@@ -647,6 +661,7 @@
             "Lending money without a plan often means losing both money and friendships. If friends can't afford something now, they probably can't afford to pay you back later. Set clear terms if you must lend, or better yet, help them budget and save instead.",
           rightExplanation:
             "'In the money' means your option is profitable right now. For call options, the stock price is above your strike price. For puts, it's below. This knowledge helps you decide whether to exercise your option or sell it for a profit.",
+          correct: "right",
         },
         {
           left: "Buy into fake 'investment apps' that promise daily doubling of your cash",
@@ -656,6 +671,7 @@
             "Nothing doubles your money daily without enormous risk! These 'apps' are usually scams designed to steal your money. Real investing typically returns 7-10% per year on average. If something sounds too good to be true in investing, it always is.",
           rightExplanation:
             "'At the money' means the option's strike price equals the current stock price. These options are often good starting points because they're not too expensive but have decent potential for profit if the stock moves in your favor.",
+          correct: "right",
         },
         {
           left: "'Out of the money' options are riskier bets on big moves, like predicting a comeback win",
@@ -665,6 +681,7 @@
             "'Out of the money' options are cheaper but need bigger price movements to become profitable. They're higher risk but potentially higher reward. Like betting on an underdog, they can pay off big if you're right, but you'll lose your premium if you're wrong.",
           rightExplanation:
             "Impulse spending destroys wealth-building opportunities. That birthday money could be the start of an investment account that grows over time. Instead of temporary sugar highs, you could be building long-term financial security. Learn to delay gratification - your future self will thank you.",
+          correct: "left",
         },
         {
           left: "Gamble rent money at arcade machines for high-score bragging rights",
@@ -674,6 +691,7 @@
             "Never gamble money you need for essentials like rent! This is how people become homeless. Bragging rights aren't worth financial disaster. Set aside 'fun money' for entertainment after you've covered all your necessities and savings goals.",
           rightExplanation:
             "Leverage means controlling more stock value than you could afford to buy outright. One option contract might control 100 shares, but cost much less than buying those shares. This amplifies both gains and losses, so use carefully and never risk more than you can afford to lose.",
+          correct: "right",
         },
         {
           left: "Hedge with options to protect against stock drops, like wearing a helmet while biking",
@@ -683,6 +701,7 @@
             "Hedging uses options as insurance against losses in your stock portfolio. If you own stocks and buy put options, you limit your losses if stocks fall. It's a smart risk management strategy that professional investors use regularly.",
           rightExplanation:
             "These emails are always scams! Legitimate organizations never ask for bank details via email. Scammers use your information to steal your money or identity. Delete these emails immediately and never give out personal financial information online.",
+          correct: "left",
         },
         {
           left: "Join 'get rich quick' online courses that teach nothing but upsell more courses",
@@ -692,6 +711,7 @@
             "These courses are designed to take your money, not teach you wealth-building. They hook you with promises, then constantly try to sell you more expensive courses. Real financial education is available free from libraries, reputable websites, and educational institutions.",
           rightExplanation:
             "Covered calls let you earn extra money from stocks you already own. You sell call options and collect the premium. If the stock stays below the strike price, you keep the premium and your shares. It's a way to generate income from your investments.",
+          correct: "right",
         },
         {
           left: "Buy protective puts to limit losses on stocks, acting as a safety net for your investments",
@@ -701,6 +721,7 @@
             "Protective puts are like insurance for your stocks. If you own stock and buy put options, you limit your losses if the stock falls. You pay a premium for this protection, but it can save you from major losses in market downturns.",
           rightExplanation:
             "Celebrity endorsements mean nothing in investing! Many celebrities are paid to promote investments they don't understand. Putting all your money in one investment (especially a volatile one like crypto) is extremely risky. Always diversify your investments.",
+          correct: "left",
         },
         {
           left: "Overspend on subscription boxes full of stuff you never use",
@@ -710,6 +731,7 @@
             "Subscription boxes often contain items worth less than what you pay, and many items go unused. These recurring charges add up quickly and drain your budget. Before subscribing to anything, calculate the annual cost and ask if you really need it.",
           rightExplanation:
             "A straddle involves buying both call and put options on the same stock. You profit if the stock makes a big move in either direction. It's useful when you expect volatility but aren't sure which way the stock will go.",
+          correct: "right",
         },
         {
           left: "Watch implied volatility, which affects option prices, like checking weather forecasts for an outdoor event",
@@ -719,6 +741,7 @@
             "Implied volatility reflects how much price movement the market expects. Higher volatility makes options more expensive because there's more chance for profit. Understanding this helps you know when options are cheap or expensive relative to expected price movements.",
           rightExplanation:
             "Real insider trading is illegal, and chat room 'tips' are usually scams or misinformation. People spreading legitimate investment advice don't promise overnight riches. Successful investing takes time, research, and patience - not secret tips from strangers online.",
+          correct: "left",
         },
         {
           left: "Blow your college fund on concert tickets for bands you'll forget in a month",
@@ -728,6 +751,7 @@
             "College is an investment in your future earning potential. Spending that money on temporary entertainment could cost you hundreds of thousands in lifetime earnings. Concerts are fun, but education pays dividends forever. Find cheaper entertainment and protect your future.",
           rightExplanation:
             "Theta measures how much an option loses value each day as it approaches expiration. This 'time decay' is important to understand because options become worthless if they expire out of the money. It affects your timing decisions for buying and selling options.",
+          correct: "right",
         },
         {
           left: "Delta shows how much an option moves with the stock, like a shadow following the sun",
@@ -737,15 +761,17 @@
             "Delta tells you how much your option's price will change when the stock price moves $1. A delta of 0.5 means the option price moves $0.50 for every $1 the stock moves. This helps you predict profits and losses from stock price changes.",
           rightExplanation:
             "Many crowdfunding campaigns are scams or poorly planned projects that never deliver. Even legitimate ones often fail. Before donating, research the project thoroughly and only give money you can afford to lose. Your generosity is admirable, but protect yourself from fraud.",
+          correct: "left",
         },
         {
           left: "Keep all your cash in a cookie jar instead of a savings account",
           right:
             "Roll options to extend trades, adjusting as markets change, like extending a library book",
           leftExplanation:
-            "Cash in a jar earns nothing and isn't protected against theft or loss. Even a basic savings account earns interest and is FDIC insured. Your money should always be working for you, even even if just earning a small amount in a safe account.",
+            "Cash in a jar earns nothing and isn't protected against theft or loss. Even a basic savings account earns interest and is FDIC insured. Your money should always be working for you, even if just earning a small amount in a safe account.",
           rightExplanation:
             "Rolling means closing your current option position and opening a new one with a later expiration date. This lets you extend a trade that needs more time to work out, though it costs additional fees. It's a useful strategy for managing positions.",
+          correct: "right",
         },
         {
           left: "Avoid early assignment by choosing American vs. European options wisely, preventing surprise calls",
@@ -755,6 +781,7 @@
             "American options can be exercised anytime before expiration, while European options only at expiration. Understanding this difference helps you avoid unwanted early assignment, where you're forced to buy or sell stock before you're ready.",
           rightExplanation:
             "Most 'limited edition' items are marketing gimmicks that never increase in value. Companies create artificial scarcity to drive sales. True collectibles that appreciate are rare and unpredictable. Don't fall for marketing hype - invest in things with proven track records.",
+          correct: "left",
         },
         {
           left: "Wager your lunch money on peer-to-peer bets during school sports",
@@ -764,6 +791,7 @@
             "Betting lunch money means risking going hungry for entertainment. This creates a cycle where you might borrow money or skip meals, affecting your health and studies. Set aside only extra money for fun activities, never money you need for essentials.",
           rightExplanation:
             "An iron condor is an advanced strategy using four options to profit when a stock stays within a specific range. It can generate steady income when markets aren't moving much, but requires good understanding of options and careful risk management.",
+          correct: "right",
         },
         {
           left: "Ignore budgeting and splurge on fast fashion hauls every payday",
@@ -773,6 +801,7 @@
             "Fast fashion is expensive and wasteful. Those trendy clothes quickly go out of style and fall apart. Without a budget, you'll never build wealth or have money for real opportunities. Track your spending, buy quality items that last, and invest the difference.",
           rightExplanation:
             "Vega measures how much an option's price changes when volatility changes. High vega means the option is very sensitive to volatility changes. Understanding vega helps you predict how your options will perform when market conditions change.",
+          correct: "right",
         },
       ];
 
@@ -836,6 +865,16 @@
           questions[currentQuestionIndex].leftExplanation;
         rightExplanationText.textContent =
           questions[currentQuestionIndex].rightExplanation;
+
+        // Apply correct/incorrect classes based on the correct answer
+        const correctAnswer = questions[currentQuestionIndex].correct;
+        if (correctAnswer === "left") {
+          leftExplanation.classList.add("correct");
+          rightExplanation.classList.add("incorrect");
+        } else {
+          leftExplanation.classList.add("incorrect");
+          rightExplanation.classList.add("correct");
+        }
 
         // Show both explanations
         leftExplanation.classList.add("show");
@@ -927,6 +966,10 @@
         // Remove chosen classes to re-enable hover effects
         leftContainer.classList.remove("chosen");
         rightContainer.classList.remove("chosen");
+
+        // Remove correct/incorrect classes
+        leftExplanation.classList.remove("correct", "incorrect");
+        rightExplanation.classList.remove("correct", "incorrect");
 
         // Hide explanations and choice indicators
         leftExplanation.classList.remove("show");
