@@ -279,32 +279,38 @@
         cursor: default;
       }
 
-      /* Current Projects */
-      .project-list {
+      #news {
+        background: #fff;
+        padding: 3rem 1.5rem;
+      }
+
+      .news-list {
         margin-top: 2rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1.5rem;
+        line-height: 1.6;
+      }
+      .news-list li::marker {
+        color: #e67e22; /* ✅ makes the number yellow-orange */
+        font-weight: bold;
       }
 
-      .project-item {
-        background: #f8f9fa;
-        border-left: 4px solid #e67e22;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        border-radius: 0 8px 8px 0;
-        transition: all 0.3s ease;
+      .news-list li {
+        margin-bottom: 0.8rem;
+        font-size: 1rem;
+        color: #2c3e50;
       }
 
-      .project-item:hover {
-        background: #f1f3f4;
-        transform: translateX(5px);
-        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+      .news-list strong {
+        font-weight: 700;
+        color: #000;
       }
 
-      .project-item strong {
-        color: #e67e22;
-        font-weight: 600;
-        display: block;
-        margin-bottom: 0.5rem;
-        font-size: 1.05rem;
+      .news-list em {
+        font-style: italic;
+        color: #34495e;
       }
 
       /* News Items */
@@ -617,7 +623,7 @@
         <div class="nav-container">
           <ul class="nav-links">
             <li><a href="#about" class="nav-link">About Me</a></li>
-            <li><a href="#research" class="nav-link">Research</a></li>
+            <li><a href="#news" class="nav-link">News</a></li>
             <li>
               <a href="#work-experience" class="nav-link">Work Experience</a>
             </li>
@@ -700,57 +706,48 @@
           </div>
         </div>
       </section>
-
-      <!-- Research Section -->
-      <section id="research" class="section">
+      <!-- News Section -->
+      <section id="news" class="section">
         <div class="container">
           <div class="section-content fade-in">
-            <h2>Research</h2>
-            <p class="intro-text">
-              My research explores applications of data science, artificial
-              intelligence, and statistical modeling across diverse domains,
-              including healthcare, human-computer interaction, and labor market
-              analysis.
-            </p>
-
-            <h3
-              style="
-                font-family: 'Playfair Display', serif;
-                color: #2c3e50;
-                margin: 2rem 0 1.5rem 0;
-                font-size: 1.4rem;
-              "
-            >
-              Publications & Projects
-            </h3>
-
-            <div class="project-list">
-              <div class="project-item">
-                <strong>Recommendation Systems</strong>
-                Hybrid based filtering that combined content, collaborative and
-                deep learning based recommendation systems.
-              </div>
-
-              <div class="project-item">
-                <strong>Drowsiness Detection</strong>
-                Eye Region as Region of Interest and Use of CNN to detect
-                drowsiness among drivers.
-              </div>
-
-              <div class="project-item">
-                <strong>Complex Regression Analysis</strong>
-                Applied hybrid regression techniques by stacking multiple
-                tree-based and deep learning models to predict complex
-                quantitative outcomes.
-              </div>
-
-              <div class="project-item">
-                <strong>Job Market Analysis</strong>
-                Applied LDA and natural language processing and data
-                visualization to analyze global job postings related to
-                Cybersecurity and Artifical Intelligence.
-              </div>
-            </div>
+            <h2>News</h2>
+            <ul class="news-list">
+              <li>
+                <span class="date">October 2025</span> — Paper Reviewer for
+                CISSE 2025
+              </li>
+              <li>
+                <span class="date">September 2025</span> — 2 papers accepted at
+                AIBThings 2025
+              </li>
+              <li>
+                <span class="date">July 2025</span> — 1 paper accepted at ICCIDA
+                2025
+              </li>
+              <li>
+                <span class="date">April 2025</span> — 2 papers accepted at IEEE
+                ICMICONF 2025
+              </li>
+              <li>
+                <span class="date">March 2025</span> — Poster presentation at
+                Kentucky Capitol 2025
+              </li>
+              <li>
+                <span class="date">Dec 2024</span> — Acceptance of paper in AHFE
+                International Conference
+              </li>
+              <li>
+                <span class="date">Oct 2024</span> — 1 paper accepted as part of
+                KCFC 2024
+              </li>
+              <li>
+                <span class="date">March 2024</span> — Poster presentation at
+                Kentucky Capitol 2024
+              </li>
+              <li>
+                <span class="date">Aug 2023</span> — LIFE Fellow Recipient
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -837,7 +834,6 @@
         </div>
       </section>
 
-      <!-- Publications Section -->
       <!-- Publications Section -->
       <section id="publications" class="section">
         <div class="container">
@@ -1006,6 +1002,14 @@
                   <strong>President, Data Science Club:</strong> Formed the
                   student-led Data Science Club in the College of Informatics,
                   organizing events and fostering collaboration among students.
+                </li>
+                <li>
+                  <strong>Professor Search Commitee:</strong>
+                  Served as the Student Representative on the Professor Search
+                  Committee responsible for searching candidates for the roles
+                  of Assistant Professor in Computer Science and Assistant
+                  Professor in Software Engineering at Northern Kentucky
+                  University.
                 </li>
                 <li>
                   <strong>Student Representative:</strong> Serving on the
