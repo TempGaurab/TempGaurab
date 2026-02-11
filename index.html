@@ -444,6 +444,15 @@
         border-color: transparent #fff transparent transparent;
       }
 
+      /* Hide older news items by default */
+      .timeline-item.older-news {
+        display: none;
+      }
+
+      .timeline-item.older-news.visible-news {
+        display: block;
+      }
+
       /* --- Responsive Layout for Mobile (< 768px) --- */
       @media screen and (max-width: 768px) {
         .timeline::after {
@@ -784,6 +793,36 @@
       .link:hover {
         color: #004080;
       }
+
+      /* Show Older News Button */
+      .show-more-btn {
+        display: block;
+        margin: 2rem auto;
+        padding: 0.8rem 2rem;
+        background: linear-gradient(135deg, #e67e22, #f39c12);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+      }
+
+      .show-more-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+        background: linear-gradient(135deg, #d35400, #e67e22);
+      }
+
+      .show-more-btn:active {
+        transform: translateY(0);
+      }
+
+      .show-more-btn.hidden {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -1078,29 +1117,31 @@
                 <strong>Baral, G.</strong>, Khanal, A., & Pandit, P. (2026).
                 "Sentiment Analysis of Reviews of Top Large Language Models"
                 <em>
-                  Proceedings of the IEEE 5th International Conference on Sentiment Analysis and Deep Learning.
+                  Proceedings of the IEEE 5th International Conference on
+                  Sentiment Analysis and Deep Learning.
                 </em>
                 (Upcoming publication)
               </div>
 
               <div class="publication-item">
-                <strong>Baral, G.</strong>, & Dhungana, P. (2026).
-                 "Comparative Analysis of Hackathon Submissions and GitHub Repositories"
+                <strong>Baral, G.</strong>, & Dhungana, P. (2026). "Comparative
+                Analysis of Hackathon Submissions and GitHub Repositories"
                 <em>
-                  Proceedings of the 7th Mediterranean Conference on Pattern Recognition and Artificial Intelligence (MedPRAI 2026).
+                  Proceedings of the 7th Mediterranean Conference on Pattern
+                  Recognition and Artificial Intelligence (MedPRAI 2026).
                 </em>
                 (Upcoming publication)
               </div>
 
               <div class="publication-item">
-                <strong>Baral, G.</strong>, & Zhou, J. (2026).
-                 "Predicting Hackathon Success: A Multi-Modal Approach"
+                <strong>Baral, G.</strong>, & Zhou, J. (2026). "Predicting
+                Hackathon Success: A Multi-Modal Approach"
                 <em>
-                  Proceedings of the IEEE 12th International Conference on Computing and Artificial Intelligence.
+                  Proceedings of the IEEE 12th International Conference on
+                  Computing and Artificial Intelligence.
                 </em>
                 (Upcoming publication)
               </div>
-
             </div>
           </div>
         </div>
@@ -1207,14 +1248,29 @@
             <h2>News</h2>
 
             <div class="timeline">
+              <!-- Recent News (Top 5) - Always visible -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Feb 2026</div>
+                <div class="timeline-content">
+                  <h3>Paper Accepted and Reviewer for ICCAI-2026</h3>
+                  <p>
+                    Paper accepted about hackathon multi-modal classification
+                    and served as a reviewer for the International Conference on
+                    Computational Intelligence (ICCAI 2026).
+                  </p>
+                </div>
+              </div>
 
- <div class="timeline-item">
+              <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Dec 2025</div>
                 <div class="timeline-content">
                   <h3>Paper Accepted for ICSADL-2026</h3>
                   <p>
-                     Conference paper on Sentiment Analysis of LLM Reviews accepted at the IEEE 5th International Conference on Sentiment Analysis and Deep Learning (ICSADL-2026).
+                    Conference paper on Sentiment Analysis of LLM Reviews
+                    accepted at the IEEE 5th International Conference on
+                    Sentiment Analysis and Deep Learning (ICSADL-2026).
                   </p>
                 </div>
               </div>
@@ -1257,7 +1313,8 @@
                 </div>
               </div>
 
-              <div class="timeline-item">
+              <!-- Older News (Hidden by default) -->
+              <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Oct 2025</div>
                 <div class="timeline-content">
@@ -1269,7 +1326,7 @@
                 </div>
               </div>
 
-              <div class="timeline-item">
+              <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Sep 2025</div>
                 <div class="timeline-content">
@@ -1281,7 +1338,7 @@
                 </div>
               </div>
 
-              <div class="timeline-item">
+              <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">July 2025</div>
                 <div class="timeline-content">
@@ -1293,7 +1350,7 @@
                 </div>
               </div>
 
-              <div class="timeline-item">
+              <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Apr 2025</div>
                 <div class="timeline-content">
@@ -1305,7 +1362,7 @@
                 </div>
               </div>
 
-              <div class="timeline-item">
+              <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Mar 2025</div>
                 <div class="timeline-content">
@@ -1317,7 +1374,7 @@
                 </div>
               </div>
 
-              <div class="timeline-item">
+              <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Dec 2024</div>
                 <div class="timeline-content">
@@ -1329,7 +1386,7 @@
                 </div>
               </div>
 
-              <div class="timeline-item">
+              <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Oct 2024</div>
                 <div class="timeline-content">
@@ -1341,7 +1398,7 @@
                 </div>
               </div>
 
-              <div class="timeline-item">
+              <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Mar 2024</div>
                 <div class="timeline-content">
@@ -1353,7 +1410,7 @@
                 </div>
               </div>
 
-              <div class="timeline-item">
+              <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Aug 2023</div>
                 <div class="timeline-content">
@@ -1365,6 +1422,11 @@
                 </div>
               </div>
             </div>
+
+            <!-- Show Older News Button -->
+            <button id="showOlderNewsBtn" class="show-more-btn">
+              Show Older News
+            </button>
           </div>
         </div>
       </section>
@@ -1577,6 +1639,25 @@
             }, 600);
           });
         }
+
+        // Show Older News functionality
+        const showOlderNewsBtn = document.getElementById("showOlderNewsBtn");
+        const olderNewsItems = document.querySelectorAll(".older-news");
+
+        if (showOlderNewsBtn) {
+          showOlderNewsBtn.addEventListener("click", function () {
+            olderNewsItems.forEach((item) => {
+              item.classList.add("visible-news");
+              // Trigger animation
+              setTimeout(() => {
+                item.style.opacity = "1";
+                item.style.transform = "translateY(0)";
+              }, 50);
+            });
+            // Hide the button after clicking
+            this.classList.add("hidden");
+          });
+        }
       });
 
       // Add pulse animation for profile image
@@ -1590,14 +1671,15 @@
       `;
       document.head.appendChild(style);
 
-      // ... existing code ...
-
       // Timeline Animation
       const timelineItems = document.querySelectorAll(".timeline-item");
       const timelineObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
+            if (
+              entry.isIntersecting &&
+              !entry.target.classList.contains("older-news")
+            ) {
               // Add a slight delay based on index for a cascading effect
               setTimeout(() => {
                 entry.target.classList.add("visible");
@@ -1618,8 +1700,6 @@
         item.style.transition = "all 0.6s ease-out";
         timelineObserver.observe(item);
       });
-
-      // ... rest of code
     </script>
   </body>
 </html>
