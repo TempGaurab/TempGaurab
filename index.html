@@ -16,11 +16,9 @@
         padding: 0;
         box-sizing: border-box;
       }
-
       html {
         scroll-behavior: smooth;
       }
-
       body {
         font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
           Roboto, sans-serif;
@@ -29,14 +27,12 @@
         background-color: #f8f9fa;
         font-weight: 400;
       }
-
       .container {
         max-width: 1000px;
         margin: 0 auto;
         padding: 0 20px;
       }
 
-      /* Navigation */
       nav {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
@@ -48,20 +44,17 @@
         z-index: 1000;
         border-bottom: 1px solid rgba(230, 126, 34, 0.1);
       }
-
       .nav-container {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 1rem 0;
       }
-
       .nav-links {
         display: flex;
         list-style: none;
         gap: 2.5rem;
       }
-
       .nav-links a {
         text-decoration: none;
         color: #555;
@@ -73,7 +66,6 @@
         padding: 0.5rem 0;
         position: relative;
       }
-
       .nav-links a::after {
         content: "";
         position: absolute;
@@ -84,23 +76,19 @@
         background: linear-gradient(90deg, #e67e22, #f39c12);
         transition: width 0.3s ease;
       }
-
       .nav-links a:hover::after,
       .nav-links a.active::after {
         width: 100%;
       }
-
       .nav-links a:hover,
       .nav-links a.active {
         color: #e67e22;
       }
 
-      /* Main Content */
       .main-content {
         margin-top: 80px;
       }
 
-      /* Profile Header Section */
       .profile-header {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
@@ -109,7 +97,6 @@
         position: relative;
         overflow: hidden;
       }
-
       .profile-header::before {
         content: "";
         position: absolute;
@@ -120,12 +107,10 @@
         background: rgba(0, 0, 0, 0.3);
         z-index: 1;
       }
-
       .profile-content {
         position: relative;
         z-index: 2;
       }
-
       .profile-image {
         width: 180px;
         height: 180px;
@@ -137,11 +122,9 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         transition: transform 0.3s ease;
       }
-
       .profile-image:hover {
         transform: scale(1.05);
       }
-
       .profile-name {
         font-family: "Playfair Display", serif;
         font-size: 3rem;
@@ -149,28 +132,24 @@
         margin-bottom: 0.5rem;
         letter-spacing: -0.02em;
       }
-
       .profile-title {
         font-size: 1.3rem;
         font-weight: 400;
         margin-bottom: 0.5rem;
         opacity: 0.9;
       }
-
       .profile-position {
         font-size: 1.1rem;
         font-weight: 500;
         opacity: 0.8;
         margin-bottom: 2rem;
       }
-
       .contact-links {
         display: flex;
         justify-content: center;
         gap: 2rem;
         flex-wrap: wrap;
       }
-
       .contact-links a {
         color: rgba(255, 255, 255, 0.9);
         text-decoration: none;
@@ -182,13 +161,11 @@
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
-
       .contact-links a:hover {
         background: rgba(255, 255, 255, 0.2);
         transform: translateY(-2px);
       }
 
-      /* Section Styling */
       .section {
         background: white;
         margin: 2rem 0;
@@ -196,14 +173,13 @@
         border-radius: 15px;
         box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
         position: relative;
+        scroll-margin-top: 100px;
       }
-
       .section-content {
         max-width: 800px;
         margin: 0 auto;
         padding: 0 2rem;
       }
-
       .section h2 {
         font-family: "Playfair Display", serif;
         color: #2c3e50;
@@ -214,7 +190,6 @@
         position: relative;
         letter-spacing: -0.02em;
       }
-
       .section h2::after {
         content: "";
         width: 60px;
@@ -226,7 +201,6 @@
         transform: translateX(-50%);
         border-radius: 2px;
       }
-
       .intro-text {
         font-size: 1.1rem;
         line-height: 1.8;
@@ -235,14 +209,12 @@
         text-align: justify;
       }
 
-      /* Research Interests */
       .research-interests {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
         margin: 3rem 0;
       }
-
       .interests-column h3 {
         font-family: "Playfair Display", serif;
         font-size: 1.4rem;
@@ -250,11 +222,9 @@
         margin-bottom: 1.5rem;
         font-weight: 500;
       }
-
       .interests-column ul {
         list-style: none;
       }
-
       .interests-column li {
         margin-bottom: 1rem;
         color: #555;
@@ -263,7 +233,6 @@
         font-weight: 400;
         transition: all 0.3s ease;
       }
-
       .interests-column li::before {
         content: "▸";
         color: #e67e22;
@@ -272,29 +241,24 @@
         font-weight: bold;
         font-size: 1.1rem;
       }
-
       .interests-column li:hover {
         color: #e67e22;
         transform: translateX(5px);
         cursor: default;
       }
 
+      /* Timeline */
       #news {
         background: #fff;
         padding: 3rem 1.5rem;
       }
-      /* --- Timeline News Section Styling (Staggered Flow) --- */
-
       .timeline {
         position: relative;
         max-width: 900px;
         margin: 1rem auto;
         padding: 10px 0;
-        /* Ensure the timeline doesn't get cut off if items overlap top bounds */
         padding-top: 20px;
       }
-
-      /* The vertical center line */
       .timeline::after {
         content: "";
         position: absolute;
@@ -305,45 +269,30 @@
         left: 50%;
         margin-left: -2px;
         border-radius: 2px;
-        z-index: 0; /* Lower z-index so cards float over it if needed */
+        z-index: 0;
       }
-
-      /* Container for each item */
       .timeline-item {
         padding: 0px 30px;
         position: relative;
         background-color: inherit;
         width: 50%;
         box-sizing: border-box;
-
-        /* --- THE MAGIC SAUCE --- */
-        /* This pulls the item up to overlap the empty space of the previous item */
         margin-top: -50px;
-        z-index: 1; /* Default stacking order */
+        z-index: 1;
       }
-
-      /* The very first item shouldn't be pulled up */
       .timeline-item:first-child {
         margin-top: 0;
       }
-
-      /* Left side items */
       .timeline-item:nth-child(odd) {
         left: 0;
         text-align: right;
-        /* Ensure odd items don't accidentally cover even items' text */
         padding-right: 40px;
       }
-
-      /* Right side items */
       .timeline-item:nth-child(even) {
         left: 50%;
         text-align: left;
-        /* Ensure even items don't accidentally cover odd items' text */
         padding-left: 40px;
       }
-
-      /* The dots on the line */
       .timeline-dot {
         position: absolute;
         width: 16px;
@@ -355,14 +304,11 @@
         border-radius: 50%;
         z-index: 2;
         transition: all 0.3s ease;
-        box-shadow: 0 0 0 4px rgba(255, 255, 255, 1); /* Add white ring to separate from line */
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 1);
       }
-
       .timeline-item:nth-child(even) .timeline-dot {
         left: -8px;
       }
-
-      /* The Date Badge */
       .timeline-date {
         display: inline-block;
         background: #e67e22;
@@ -374,8 +320,6 @@
         margin-bottom: 8px;
         box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
       }
-
-      /* The Content Box */
       .timeline-content {
         padding: 15px;
         background: #fff;
@@ -385,7 +329,6 @@
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         position: relative;
       }
-
       .timeline-content h3 {
         margin: 0 0 5px 0;
         color: #2c3e50;
@@ -393,33 +336,25 @@
         font-family: "Inter", sans-serif;
         font-weight: 700;
       }
-
       .timeline-content p {
         margin: 0;
         font-size: 0.95rem;
         color: #666;
         line-height: 1.4;
       }
-
-      /* Hover Effects */
-      /* When hovering, bring that specific item to the very front */
       .timeline-item:hover {
         z-index: 10;
       }
-
       .timeline-item:hover .timeline-dot {
         background-color: #e67e22;
         transform: scale(1.2);
         box-shadow: 0 0 0 6px rgba(230, 126, 34, 0.2);
       }
-
       .timeline-item:hover .timeline-content {
         transform: translateY(-3px);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         border-color: rgba(230, 126, 34, 0.2);
       }
-
-      /* Arrows pointing to the line */
       .timeline-content::before {
         content: " ";
         height: 0;
@@ -429,60 +364,46 @@
         z-index: 1;
         border: medium solid white;
       }
-
-      /* Left arrow */
       .timeline-item:nth-child(odd) .timeline-content::before {
         right: -10px;
         border-width: 10px 0 10px 10px;
         border-color: transparent transparent transparent #fff;
       }
-
-      /* Right arrow */
       .timeline-item:nth-child(even) .timeline-content::before {
         left: -10px;
         border-width: 10px 10px 10px 0;
         border-color: transparent #fff transparent transparent;
       }
-
-      /* Hide older news items by default */
       .timeline-item.older-news {
         display: none;
       }
-
       .timeline-item.older-news.visible-news {
         display: block;
       }
 
-      /* --- Responsive Layout for Mobile (< 768px) --- */
       @media screen and (max-width: 768px) {
         .timeline::after {
           left: 31px;
         }
-
         .timeline-item {
           width: 100%;
           padding-left: 70px;
           padding-right: 25px;
           padding-bottom: 20px;
-
-          /* IMPORTANT: Reset the negative margin on mobile or they will crash into each other */
           margin-top: 0;
         }
-
         .timeline-item:nth-child(odd),
         .timeline-item:nth-child(even) {
           left: 0;
           text-align: left;
-          padding-left: 70px; /* Force consistent padding */
+          padding-left: 70px;
           padding-right: 25px;
         }
-
         .timeline-item:nth-child(odd) .timeline-dot,
         .timeline-item:nth-child(even) .timeline-dot {
           left: 23px;
           right: auto;
         }
-
         .timeline-item:nth-child(odd) .timeline-content::before,
         .timeline-item:nth-child(even) .timeline-content::before {
           left: -10px;
@@ -492,24 +413,20 @@
         }
       }
 
-      /* News Items */
       .news-item {
         border-bottom: 1px solid #eee;
         padding: 2rem 0;
         transition: all 0.3s ease;
       }
-
       .news-item:hover {
         background: rgba(230, 126, 34, 0.02);
         margin: 0 -2rem;
         padding: 2rem;
         border-radius: 8px;
       }
-
       .news-item:last-child {
         border-bottom: none;
       }
-
       .news-date {
         color: #e67e22;
         font-weight: 600;
@@ -517,20 +434,17 @@
         font-size: 1rem;
         letter-spacing: 0.05em;
       }
-
       .news-content {
         color: #555;
         line-height: 1.7;
         font-size: 1rem;
       }
-
       .news-images {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
         margin-top: 1.5rem;
       }
-
       .news-images img {
         width: 100%;
         height: 220px;
@@ -539,7 +453,6 @@
         transition: all 0.3s ease;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       }
-
       .news-images img:hover {
         transform: scale(1.03) translateY(-5px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -549,7 +462,6 @@
       .publication-list {
         margin-top: 2rem;
       }
-
       .publication-item {
         margin-bottom: 2rem;
         padding: 1.5rem;
@@ -558,28 +470,63 @@
         border-left: 3px solid #e67e22;
         transition: all 0.3s ease;
       }
-
       .publication-item:hover {
         background: #f5f6f7;
         transform: translateY(-2px);
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
       }
-
       .publication-item strong {
         color: #e67e22;
         font-weight: 600;
       }
-
       .publication-item em {
         color: #666;
         font-style: italic;
       }
 
-      /* Teaching & Service Lists */
+      /* Older Publications — hidden by default */
+      .publication-item.older-pub {
+        display: none;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+      .publication-item.older-pub.visible-pub {
+        display: block;
+      }
+      .publication-item.older-pub.animated-pub {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Year labels */
+      .pub-year-label {
+        font-family: "Playfair Display", serif;
+        color: #2c3e50;
+        margin: 2rem 0 1rem 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 0.4rem 1rem;
+        background: linear-gradient(
+          135deg,
+          rgba(230, 126, 34, 0.1),
+          rgba(243, 156, 18, 0.05)
+        );
+        border-radius: 8px;
+        display: inline-block;
+        border-left: 3px solid #e67e22;
+      }
+      .pub-year-label.older-pub {
+        display: none;
+      }
+      .pub-year-label.older-pub.visible-pub {
+        display: inline-block;
+      }
+
+      /* Styled lists */
       .styled-list {
         margin-top: 1.5rem;
       }
-
       .styled-list h3 {
         font-family: "Playfair Display", serif;
         color: #2c3e50;
@@ -587,12 +534,10 @@
         font-size: 1.3rem;
         font-weight: 500;
       }
-
       .styled-list ul {
         list-style: none;
         margin-left: 0;
       }
-
       .styled-list li {
         margin-bottom: 1rem;
         padding: 1rem 1.5rem;
@@ -601,18 +546,16 @@
         border-left: 3px solid #e67e22;
         transition: all 0.3s ease;
       }
-
       .styled-list li:hover {
         background: rgba(230, 126, 34, 0.1);
         transform: translateX(5px);
       }
-
       .styled-list strong {
         color: #e67e22;
         font-weight: 600;
       }
 
-      /* Certificate Items */
+      /* Certificates */
       .certificate-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -623,45 +566,25 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%; /* full width of parent grid */
-        max-width: 400px; /* optional: control max card size */
+        width: 100%;
+        max-width: 400px;
         margin: 10px;
       }
-
       .certificate-image {
-        width: 100%; /* fills the card width */
-        height: auto; /* keeps aspect ratio */
+        width: 100%;
+        height: auto;
         border-radius: 10px;
-        object-fit: cover; /* crops nicely if needed */
+        object-fit: cover;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         transition: all 0.4s ease;
         cursor: pointer;
       }
-
       .certificate-image:hover {
         transform: scale(1.1);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         z-index: 10;
         position: relative;
       }
-
-      .certificate-image:active {
-        transform: scale(1.3);
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-      }
-
-      .certificate-image.clicked {
-        transform: scale(1.5);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-        z-index: 50;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(1.5);
-        border-radius: 15px;
-        transition: all 0.5s ease;
-      }
-
       .certificate-title {
         margin-top: 8px;
         font-size: 1rem;
@@ -669,103 +592,51 @@
         text-align: center;
       }
 
-      .certificate-issuer {
-        color: #2c3e50;
-        font-weight: 500;
-        margin-bottom: 0.5rem;
-        font-size: 1.05rem;
-      }
-
-      .certificate-date {
-        color: #666;
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-        font-style: italic;
-      }
-
-      .certificate-description {
-        color: #555;
-        line-height: 1.6;
-        font-size: 0.95rem;
-      }
-
-      .certificate-link {
-        display: inline-block;
-        margin-top: 1rem;
-        color: #e67e22;
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-      }
-
-      .certificate-link:hover {
-        color: #d35400;
-        text-decoration: underline;
-      }
-
-      /* Responsive Design */
       @media (max-width: 768px) {
         .profile-name {
           font-size: 2.5rem;
         }
-
         .profile-title {
           font-size: 1.1rem;
         }
-
         .nav-links {
           gap: 1rem;
           flex-wrap: wrap;
           justify-content: center;
           font-size: 0.85rem;
         }
-
         .research-interests {
           grid-template-columns: 1fr;
           gap: 2rem;
         }
-
         .news-images {
           grid-template-columns: 1fr;
         }
-
         .contact-links {
           gap: 1rem;
         }
-
         .section h2 {
           font-size: 2rem;
         }
-
         .section-content {
           padding: 0 1rem;
         }
-
         .certificate-grid {
           grid-template-columns: 1fr;
           gap: 1.5rem;
         }
       }
 
-      /* Scroll animations */
       .fade-in {
         opacity: 0;
         transform: translateY(30px);
         transition: all 0.8s ease;
       }
-
       .fade-in.visible {
         opacity: 1;
         transform: translateY(0);
       }
 
-      /* Smooth scroll offset for fixed nav */
-      .section {
-        scroll-margin-top: 100px;
-      }
-
-      /* Enhanced typography */
       h1,
       h2,
       h3,
@@ -775,15 +646,12 @@
         font-weight: 600;
         line-height: 1.3;
       }
-
       p {
         font-weight: 400;
       }
-
       strong {
         font-weight: 600;
       }
-
       .link {
         color: #0066cc;
         text-decoration: underline;
@@ -794,7 +662,7 @@
         color: #004080;
       }
 
-      /* Show Older News Button */
+      /* Shared show-more button style */
       .show-more-btn {
         display: block;
         margin: 2rem auto;
@@ -809,24 +677,20 @@
         transition: all 0.3s ease;
         box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
       }
-
       .show-more-btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
         background: linear-gradient(135deg, #d35400, #e67e22);
       }
-
       .show-more-btn:active {
         transform: translateY(0);
       }
-
       .show-more-btn.hidden {
         display: none;
       }
     </style>
   </head>
   <body>
-    <!-- Navigation -->
     <nav>
       <div class="container">
         <div class="nav-container">
@@ -846,7 +710,6 @@
     </nav>
 
     <div class="main-content">
-      <!-- Profile Header -->
       <header class="profile-header">
         <div class="container">
           <div class="profile-content">
@@ -857,7 +720,6 @@
             <p class="profile-position">
               Undergraduate Student in Data Science
             </p>
-
             <div class="contact-links">
               <a href="mailto:gaurabusa@gmail.com">📧 Email</a>
               <a href="https://www.linkedin.com/in/gaurab-baral-991333216/"
@@ -874,7 +736,7 @@
         </div>
       </header>
 
-      <!-- About Section -->
+      <!-- About -->
       <section id="about" class="section">
         <div class="container">
           <div class="section-content fade-in">
@@ -894,7 +756,6 @@
               and statistics, and actively contribute to research in the College
               of Informatics.
             </p>
-
             <div class="research-interests">
               <div class="interests-column">
                 <h3>Research Interests</h3>
@@ -917,12 +778,11 @@
         </div>
       </section>
 
-      <!-- Work Experience Section -->
+      <!-- Work Experience -->
       <section id="work-experience" class="section">
         <div class="container">
           <div class="section-content fade-in">
             <h2>Work Experience</h2>
-
             <div class="news-item">
               <div class="news-date">2025.08 – Present</div>
               <div class="news-content">
@@ -932,7 +792,6 @@
                   >Burkhardt Consulting Center · Contract
                   <span>· Northern Kentucky University · On-site</span></em
                 >
-
                 <ul>
                   <li>
                     Conducted statistical analyses (Regression, ANOVA,
@@ -947,7 +806,6 @@
                 </ul>
               </div>
             </div>
-
             <div class="news-item">
               <div class="news-date">2025.05 – 2025.08</div>
               <div class="news-content">
@@ -970,7 +828,6 @@
                 </ul>
               </div>
             </div>
-
             <div class="news-item">
               <div class="news-date">2023.05 - Present</div>
               <div class="news-content">
@@ -979,8 +836,7 @@
                   ><span
                     >Northern Kentucky University · Part-time · Hybrid</span
                   ></i
-                >
-                <br />
+                ><br />
                 <ul>
                   <li>
                     I am working as a Student Researcher at the College of
@@ -999,7 +855,7 @@
         </div>
       </section>
 
-      <!-- Publications Section -->
+      <!-- Publications -->
       <section id="publications" class="section">
         <div class="container">
           <div class="section-content fade-in">
@@ -1017,71 +873,73 @@
             </h3>
 
             <div class="publication-list">
-              <!-- 2026 -->
+              <!-- ===== 2026 — Always Visible ===== -->
+
               <div class="publication-item">
                 <strong>Baral, G.</strong>, Shrestha, S., Sah, M., &
                 Chattopadhyay, A. (2026). "Enhancing Cybersecurity Education
                 with Retrieval-Augmented Generation: A Virtual Teaching
                 Assistant Approach"
-                <em>
-                  Proceedings of the IEEE World Engineering Education Conference
-                  (EDUNINE).
-                </em>
+                <em
+                  >Proceedings of the IEEE World Engineering Education
+                  Conference (EDUNINE).</em
+                >
                 (Upcoming publication)
               </div>
 
               <div class="publication-item">
                 <strong>Baral, G.</strong>, & Zhou, J. (2026). "Predicting
                 Hackathon Success: A Multi-Modal Approach"
-                <em>
-                  Proceedings of the IEEE 12th International Conference on
-                  Computing and Artificial Intelligence (ICCAI).
-                </em>
+                <em
+                  >Proceedings of the IEEE 12th International Conference on
+                  Computing and Artificial Intelligence (ICCAI).</em
+                >
                 (Upcoming publication)
               </div>
 
               <div class="publication-item">
                 <strong>Baral, G.</strong>, & Dhungana, P. (2026). "Comparative
                 Analysis of Hackathon Submissions and GitHub Repositories"
-                <em>
-                  Proceedings of the 7th Mediterranean Conference on Pattern
-                  Recognition and Artificial Intelligence (MedPRAI).
-                </em>
+                <em
+                  >Proceedings of the 7th Mediterranean Conference on Pattern
+                  Recognition and Artificial Intelligence (MedPRAI).</em
+                >
                 (Upcoming publication)
               </div>
 
               <div class="publication-item">
                 <strong>Baral, G.</strong>, Khanal, A., & Pandit, P. (2026).
                 "Sentiment Analysis of Reviews of Top Large Language Models"
-                <em>
-                  Proceedings of the IEEE 5th International Conference on
-                  Sentiment Analysis and Deep Learning (ICSADL).
-                </em>
+                <em
+                  >Proceedings of the IEEE 5th International Conference on
+                  Sentiment Analysis and Deep Learning (ICSADL).</em
+                >
                 (Upcoming publication)
               </div>
 
-              <!-- 2025 -->
+              <!-- ===== 2025 — Older (Hidden by default) ===== -->
 
-              <div class="publication-item">
+              <div class="publication-item older-pub">
                 <strong>Baral, G.</strong> & Zhou, J. (2025). "Forecasting
                 Sticker Sales: A Comprehensive Analysis Using Regression
                 Models."
-                <em>
-                  Proceedings of the 4th International Conference on Computing,
-                  IoT and Data Analytics(ICCIDA).
-                </em>
+                <em
+                  >Proceedings of the 4th International Conference on Computing,
+                  IoT and Data Analytics (ICCIDA).</em
+                >
                 (Upcoming publication)
               </div>
 
-              <div class="publication-item">
+              <div class="publication-item older-pub">
                 <strong>Baral, G.</strong>, Sah, M., Khanal, A., Dhonju, A., &
                 Shrestha, S. (2025). "Enhancing Emotion Classification with
                 Human-in-the-Loop Verification for Facial Expression
                 Recognition"
-                <em>
-                  Proceedings of the International Conference on Artificial
-                  Intelligence, Blockchain, and Internet of Things (AIBThings).
-                </em>
+                <em
+                  >Proceedings of the International Conference on Artificial
+                  Intelligence, Blockchain, and Internet of Things
+                  (AIBThings).</em
+                >
                 DOI:
                 <a
                   href="https://ieeexplore.ieee.org/document/112961"
@@ -1090,15 +948,16 @@
                 >.
               </div>
 
-              <div class="publication-item">
+              <div class="publication-item older-pub">
                 <strong>Baral, G.</strong>, Sah, M., Khanal, A., Dhonju, A., &
                 Shrestha, S. (2025). "AutoEyeFT: A Human-in-the-Loop Continuous
                 Learning Pipeline for Robust Drowsiness Detection via Eye Region
                 Analysis"
-                <em>
-                  Proceedings of the International Conference on Artificial
-                  Intelligence, Blockchain, and Internet of Things (AIBThings).
-                </em>
+                <em
+                  >Proceedings of the International Conference on Artificial
+                  Intelligence, Blockchain, and Internet of Things
+                  (AIBThings).</em
+                >
                 DOI:
                 <a
                   href="https://ieeexplore.ieee.org/abstract/document/11296184"
@@ -1107,14 +966,15 @@
                 >.
               </div>
 
-              <!-- 2024 -->
-              <div class="publication-item">
+              <!-- ===== 2024 — Older (Hidden by default) ===== -->
+
+              <div class="publication-item older-pub">
                 <strong>Baral, G.</strong> & Zhou, J. (2024). "Exploring Movie
                 Recommendation Systems: A Text Mining based Overview."
-                <em>
-                  IEEE 4th International Conference on Computing and Machine
-                  Intelligence (ICMI).
-                </em>
+                <em
+                  >IEEE 4th International Conference on Computing and Machine
+                  Intelligence (ICMI).</em
+                >
                 DOI:
                 <a
                   href="https://ieeexplore.ieee.org/document/11141109"
@@ -1123,14 +983,14 @@
                 >.
               </div>
 
-              <div class="publication-item">
+              <div class="publication-item older-pub">
                 <strong>Baral, G.</strong>, Shrestha, S., Shrestha, A., Lama,
                 N., Zhou, J. (2024). "Drowsiness Detection Using Convolutional
                 Neural Network with Eye Feature Analysis."
-                <em>
-                  IEEE 4th International Conference on Computing and Machine
-                  Intelligence (ICMI).
-                </em>
+                <em
+                  >IEEE 4th International Conference on Computing and Machine
+                  Intelligence (ICMI).</em
+                >
                 DOI:
                 <a
                   href="https://ieeexplore.ieee.org/document/11141118"
@@ -1139,13 +999,13 @@
                 >.
               </div>
 
-              <div class="publication-item">
+              <div class="publication-item older-pub">
                 <strong>Baral, G.</strong> & Zhou, J. (2024). "A Data-Driven
                 Analysis of Cybersecurity Job Market Trends."
-                <em>
-                  Proceedings of the Kentucky Cybersecurity & Forensics
-                  Conference (KCFC)
-                </em>
+                <em
+                  >Proceedings of the Kentucky Cybersecurity & Forensics
+                  Conference (KCFC)</em
+                >
                 DOI:
                 <a
                   href="https://www.researchgate.net/publication/395396547_A_Data-Driven_Analysis_of_Cybersecurity_Job_Market_Trends"
@@ -1154,7 +1014,7 @@
                 >.
               </div>
 
-              <div class="publication-item">
+              <div class="publication-item older-pub">
                 <strong>Baral, G.</strong> & Zhou, J. (2024). "A Hybrid
                 Regression Method for Predicting Housing Prices."
                 <em>AHFE International Conference, AHFE Open Access, vol 159</em
@@ -1164,16 +1024,21 @@
                 >.
               </div>
             </div>
+            <!-- end .publication-list -->
+
+            <!-- Show Older Publications Button -->
+            <button id="showOlderPubsBtn" class="show-more-btn">
+              Show Older Publications
+            </button>
           </div>
         </div>
       </section>
 
-      <!-- Teaching Section -->
+      <!-- Teaching -->
       <section id="teaching" class="section">
         <div class="container">
           <div class="section-content fade-in">
             <h2>Teaching</h2>
-
             <div class="styled-list">
               <h3>Teaching Assistant</h3>
               <ul>
@@ -1195,7 +1060,6 @@
                   performance through one-on-one and group sessions.
                 </li>
               </ul>
-
               <h3>Workshop Leadership</h3>
               <ul>
                 <li>
@@ -1215,12 +1079,11 @@
         </div>
       </section>
 
-      <!-- Service Section -->
+      <!-- Service -->
       <section id="service" class="section">
         <div class="container">
           <div class="section-content fade-in">
             <h2>Service</h2>
-
             <div class="styled-list">
               <h3>University Service</h3>
               <ul>
@@ -1230,10 +1093,10 @@
                   organizing events and fostering collaboration among students.
                 </li>
                 <li>
-                  <strong>Professor Search Commitee:</strong>
-                  Served as the Student Representative on the Professor Search
-                  Committee responsible for searching candidates for the roles
-                  of Assistant Professor in Computer Science and Assistant
+                  <strong>Professor Search Commitee:</strong> Served as the
+                  Student Representative on the Professor Search Committee
+                  responsible for searching candidates for the roles of
+                  Assistant Professor in Computer Science and Assistant
                   Professor in Software Engineering at Northern Kentucky
                   University.
                 </li>
@@ -1243,7 +1106,6 @@
                   undergraduate student interests and concerns.
                 </li>
               </ul>
-
               <h3>Community Outreach</h3>
               <ul>
                 <li>
@@ -1262,14 +1124,12 @@
         </div>
       </section>
 
-      <!-- News Section -->
+      <!-- News -->
       <section id="news" class="section">
         <div class="container">
           <div class="section-content fade-in">
             <h2>News</h2>
-
             <div class="timeline">
-              <!-- Recent News (Top 5) - Always visible -->
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Feb 2026</div>
@@ -1282,7 +1142,6 @@
                   </p>
                 </div>
               </div>
-
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Jan 2026</div>
@@ -1295,7 +1154,6 @@
                   </p>
                 </div>
               </div>
-
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Dec 2025</div>
@@ -1308,7 +1166,6 @@
                   </p>
                 </div>
               </div>
-
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Nov 2025</div>
@@ -1321,7 +1178,6 @@
                   </p>
                 </div>
               </div>
-
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Nov 2025</div>
@@ -1334,7 +1190,6 @@
                   </p>
                 </div>
               </div>
-
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Oct 2025</div>
@@ -1346,8 +1201,7 @@
                   </p>
                 </div>
               </div>
-
-              <!-- Older News (Hidden by default) -->
+              <!-- Older News -->
               <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Oct 2025</div>
@@ -1359,7 +1213,6 @@
                   </p>
                 </div>
               </div>
-
               <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Sep 2025</div>
@@ -1371,7 +1224,6 @@
                   </p>
                 </div>
               </div>
-
               <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">July 2025</div>
@@ -1383,7 +1235,6 @@
                   </p>
                 </div>
               </div>
-
               <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Apr 2025</div>
@@ -1395,7 +1246,6 @@
                   </p>
                 </div>
               </div>
-
               <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Mar 2025</div>
@@ -1407,7 +1257,6 @@
                   </p>
                 </div>
               </div>
-
               <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Dec 2024</div>
@@ -1419,7 +1268,6 @@
                   </p>
                 </div>
               </div>
-
               <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Oct 2024</div>
@@ -1431,7 +1279,6 @@
                   </p>
                 </div>
               </div>
-
               <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Mar 2024</div>
@@ -1443,7 +1290,6 @@
                   </p>
                 </div>
               </div>
-
               <div class="timeline-item older-news">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Aug 2023</div>
@@ -1456,8 +1302,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- Show Older News Button -->
             <button id="showOlderNewsBtn" class="show-more-btn">
               Show Older News
             </button>
@@ -1465,7 +1309,7 @@
         </div>
       </section>
 
-      <!-- Certificates Section -->
+      <!-- Certificates -->
       <section id="certificates" class="section">
         <div class="container">
           <div class="section-content fade-in">
@@ -1474,11 +1318,10 @@
               Several Certifications that I have achieved till date.
             </p>
             <div class="certificate-grid">
-              <!-- Put HERE Item -->
               <div class="certificate-item">
                 <img
                   src="ICSADL.png"
-                  alt="Certificate of Presenting at ICSADL Conference "
+                  alt="Certificate of Presenting at ICSADL Conference"
                   class="certificate-image"
                 />
                 <div class="certificate-title">
@@ -1486,11 +1329,10 @@
                   Sentiment Analysis Paper.
                 </div>
               </div>
-
               <div class="certificate-item">
                 <img
                   src="medprai.png"
-                  alt="Certificate of Presenting at MEDPRAI Conference "
+                  alt="Certificate of Presenting at MEDPRAI Conference"
                   class="certificate-image"
                 />
                 <div class="certificate-title">
@@ -1498,11 +1340,10 @@
                   hackathon analytics paper.
                 </div>
               </div>
-
               <div class="certificate-item">
                 <img
                   src="iccida.jpg"
-                  alt="Certificate of Presenting at ICCIDA Conference "
+                  alt="Certificate of Presenting at ICCIDA Conference"
                   class="certificate-image"
                 />
                 <div class="certificate-title">
@@ -1510,11 +1351,10 @@
                   Sales Regression Paper.
                 </div>
               </div>
-
               <div class="certificate-item">
                 <img
                   src="kcfc.jpg"
-                  alt="Certificate of Presenting at KCFC Conference  "
+                  alt="Certificate of Presenting at KCFC Conference"
                   class="certificate-image"
                 />
                 <div class="certificate-title">
@@ -1522,12 +1362,10 @@
                   "Cybersecurity Job Analysis" Paper.
                 </div>
               </div>
-
-              <!-- Certificate Item -->
               <div class="certificate-item">
                 <img
                   src="drowsiness_ICMI.jpg"
-                  alt="Certificate of Presenting at ICMI Conference "
+                  alt="Certificate of Presenting at ICMI Conference"
                   class="certificate-image"
                 />
                 <div class="certificate-title">
@@ -1535,11 +1373,10 @@
                   Drowsiness Detection Paper
                 </div>
               </div>
-
               <div class="certificate-item">
                 <img
                   src="MRS_ICMI.jpg"
-                  alt="Certificate of Presenting at ICMI Conference "
+                  alt="Certificate of Presenting at ICMI Conference"
                   class="certificate-image"
                 />
                 <div class="certificate-title">
@@ -1550,7 +1387,7 @@
               <div class="certificate-item">
                 <img
                   src="dsc_club.jpg"
-                  alt="Certificate of being the best contributor for the Data Science Club "
+                  alt="Certificate of being the best contributor for the Data Science Club"
                   class="certificate-image"
                 />
                 <div class="certificate-title">
@@ -1561,7 +1398,7 @@
               <div class="certificate-item">
                 <img
                   src="nvidia.jpg"
-                  alt="Certificate of NVIDIA Fundamentals of Deep Learning  "
+                  alt="Certificate of NVIDIA Fundamentals of Deep Learning"
                   class="certificate-image"
                 />
                 <div class="certificate-title">
@@ -1572,7 +1409,7 @@
               <div class="certificate-item">
                 <img
                   src="aibthings_drowsiness.png"
-                  alt="Certificate of Presenting at AIBThings Conference "
+                  alt="Certificate of Presenting at AIBThings Conference"
                   class="certificate-image"
                 />
                 <div class="certificate-title">
@@ -1580,11 +1417,10 @@
                   Drowsiness Paper
                 </div>
               </div>
-
               <div class="certificate-item">
                 <img
                   src="aibthings_emotions.png"
-                  alt="Certificate of Presenting at AIBThings Conference "
+                  alt="Certificate of Presenting at AIBThings Conference"
                   class="certificate-image"
                 />
                 <div class="certificate-title">
@@ -1599,95 +1435,96 @@
     </div>
 
     <script>
-      // Smooth scrolling navigation
       document.addEventListener("DOMContentLoaded", function () {
         const navLinks = document.querySelectorAll(".nav-link");
 
         navLinks.forEach((link) => {
           link.addEventListener("click", function (e) {
             e.preventDefault();
-
-            // Remove active class from all nav links
             navLinks.forEach((nav) => nav.classList.remove("active"));
-
-            // Add active class to clicked nav link
             this.classList.add("active");
-
-            // Get target section
-            const targetId = this.getAttribute("href");
-            const targetSection = document.querySelector(targetId);
-
-            if (targetSection) {
+            const targetSection = document.querySelector(
+              this.getAttribute("href")
+            );
+            if (targetSection)
               targetSection.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
               });
-            }
           });
         });
 
-        // Update active nav link based on scroll position
         function updateActiveNavLink() {
           const sections = document.querySelectorAll("section[id]");
-          const scrollPos = window.scrollY + 150; // Offset for fixed header
-
+          const scrollPos = window.scrollY + 150;
           sections.forEach((section) => {
             const top = section.offsetTop;
             const bottom = top + section.offsetHeight;
             const id = section.getAttribute("id");
-
             if (scrollPos >= top && scrollPos <= bottom) {
               navLinks.forEach((link) => link.classList.remove("active"));
               const activeLink = document.querySelector(`a[href="#${id}"]`);
-              if (activeLink) {
-                activeLink.classList.add("active");
-              }
+              if (activeLink) activeLink.classList.add("active");
             }
           });
         }
 
-        // Scroll animations
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        };
-
-        const observer = new IntersectionObserver(function (entries) {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-            }
-          });
-        }, observerOptions);
-
-        // Observe all fade-in elements
-        const fadeElements = document.querySelectorAll(".fade-in");
-        fadeElements.forEach((el) => observer.observe(el));
-
-        // Update nav on scroll
+        // Fade-in scroll animations
+        const observer = new IntersectionObserver(
+          (entries) =>
+            entries.forEach((e) => {
+              if (e.isIntersecting) e.target.classList.add("visible");
+            }),
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+        );
+        document
+          .querySelectorAll(".fade-in")
+          .forEach((el) => observer.observe(el));
         window.addEventListener("scroll", updateActiveNavLink);
-
-        // Set initial active link
         updateActiveNavLink();
 
-        // Enhanced hover effects for non-image items
-        const projectItems = document.querySelectorAll(".project-item");
-        const publicationItems = document.querySelectorAll(".publication-item");
-        const newsItems = document.querySelectorAll(".news-item");
-        const certificateItems = document.querySelectorAll(".certificate-item");
+        // =============================================
+        // Show Older Publications
+        // =============================================
+        const showOlderPubsBtn = document.getElementById("showOlderPubsBtn");
+        const olderPubItems = document.querySelectorAll(".older-pub");
 
-        [
-          ...projectItems,
-          ...publicationItems,
-          ...newsItems,
-          ...certificateItems,
-        ].forEach((item) => {
-          item.addEventListener("mouseenter", function () {
-            this.style.cursor = "default";
+        if (showOlderPubsBtn) {
+          showOlderPubsBtn.addEventListener("click", function () {
+            // Make them visible (display)
+            olderPubItems.forEach((item) => item.classList.add("visible-pub"));
+            // Staggered fade-in animation
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                olderPubItems.forEach((item, i) => {
+                  setTimeout(() => item.classList.add("animated-pub"), i * 60);
+                });
+              });
+            });
+            this.classList.add("hidden");
           });
-        });
+        }
 
-        // Profile image interaction
+        // =============================================
+        // Show Older News
+        // =============================================
+        const showOlderNewsBtn = document.getElementById("showOlderNewsBtn");
+        const olderNewsItems = document.querySelectorAll(".older-news");
+
+        if (showOlderNewsBtn) {
+          showOlderNewsBtn.addEventListener("click", function () {
+            olderNewsItems.forEach((item) => {
+              item.classList.add("visible-news");
+              setTimeout(() => {
+                item.style.opacity = "1";
+                item.style.transform = "translateY(0)";
+              }, 50);
+            });
+            this.classList.add("hidden");
+          });
+        }
+
+        // Profile image pulse
         const profileImg = document.querySelector(".profile-image");
         if (profileImg) {
           profileImg.addEventListener("click", function () {
@@ -1697,39 +1534,14 @@
             }, 600);
           });
         }
-
-        // Show Older News functionality
-        const showOlderNewsBtn = document.getElementById("showOlderNewsBtn");
-        const olderNewsItems = document.querySelectorAll(".older-news");
-
-        if (showOlderNewsBtn) {
-          showOlderNewsBtn.addEventListener("click", function () {
-            olderNewsItems.forEach((item) => {
-              item.classList.add("visible-news");
-              // Trigger animation
-              setTimeout(() => {
-                item.style.opacity = "1";
-                item.style.transform = "translateY(0)";
-              }, 50);
-            });
-            // Hide the button after clicking
-            this.classList.add("hidden");
-          });
-        }
       });
 
-      // Add pulse animation for profile image
+      // Pulse keyframe
       const style = document.createElement("style");
-      style.textContent = `
-        @keyframes pulse {
-          0% { transform: scale(1); }
-          50% { transform: scale(1.1); }
-          100% { transform: scale(1); }
-        }
-      `;
+      style.textContent = `@keyframes pulse { 0%{transform:scale(1)} 50%{transform:scale(1.1)} 100%{transform:scale(1)} }`;
       document.head.appendChild(style);
 
-      // Timeline Animation
+      // Timeline animation
       const timelineItems = document.querySelectorAll(".timeline-item");
       const timelineObserver = new IntersectionObserver(
         (entries) => {
@@ -1738,12 +1550,11 @@
               entry.isIntersecting &&
               !entry.target.classList.contains("older-news")
             ) {
-              // Add a slight delay based on index for a cascading effect
               setTimeout(() => {
                 entry.target.classList.add("visible");
                 entry.target.style.opacity = "1";
                 entry.target.style.transform = "translateY(0)";
-              }, index * 100); // 100ms delay between each item
+              }, index * 100);
               timelineObserver.unobserve(entry.target);
             }
           });
@@ -1752,7 +1563,6 @@
       );
 
       timelineItems.forEach((item) => {
-        // Set initial state via JS to avoid layout issues if JS fails
         item.style.opacity = "0";
         item.style.transform = "translateY(20px)";
         item.style.transition = "all 0.6s ease-out";
