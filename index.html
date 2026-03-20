@@ -3,15 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gaurab Baral</title>
+    <meta
+      name="description"
+      content="Gaurab Baral — Data Science Researcher & LIFE Fellow at Northern Kentucky University. Research in ML, NLP, Computer Vision. 10+ publications."
+    />
+    <title>Gaurab Baral | Data Science Researcher</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=DM+Serif+Display:ital@0;1&display=swap"
       rel="stylesheet"
     />
+
     <style>
-      * {
+      *,
+      *::before,
+      *::after {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -19,1554 +26,2246 @@
       html {
         scroll-behavior: smooth;
       }
-      body {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        background-color: #f8f9fa;
-        font-weight: 400;
-      }
-      .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 20px;
+
+      :root {
+        --bg: #f4f1ea;
+        --accent: #e67e22;
+        --accent-dark: #c0392b;
+        --border: #d5d1c8;
+        --text: #111;
+        --muted: #6b7280;
+        --white: #ffffff;
+        --blue: #1d4ed8;
+        --teal: #0f766e;
+        --violet: #7c3aed;
+        --amber: #b45309;
+        --emerald: #059669;
+        --rose: #be185d;
       }
 
-      nav {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        /* subtle grain texture */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* ── TOP BAR ── */
+      .top-bar {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        z-index: 1000;
-        border-bottom: 1px solid rgba(230, 126, 34, 0.1);
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+        z-index: 60;
       }
-      .nav-container {
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 3px;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
+        height: 56px;
+      }
+      .nav-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        height: 100%;
         display: flex;
-        justify-content: center;
         align-items: center;
-        padding: 1rem 0;
+        justify-content: space-between;
+      }
+      .nav-logo {
+        font-size: 0.85rem;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-logo:hover {
+        color: var(--accent);
       }
       .nav-links {
         display: flex;
+        align-items: center;
+        gap: 1.6rem;
         list-style: none;
-        gap: 2.5rem;
       }
       .nav-links a {
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #78716c;
         text-decoration: none;
-        color: #555;
-        font-weight: 500;
-        font-size: 0.95rem;
-        letter-spacing: 0.02em;
-        transition: all 0.3s ease;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+      .nav-links .scholar-btn {
+        color: var(--accent);
+        border: 1px solid var(--accent);
+        padding: 0.35rem 0.75rem;
+        transition: background 0.2s, color 0.2s;
+      }
+      .nav-links .scholar-btn:hover {
+        background: var(--accent);
+        color: var(--white);
+      }
+      .nav-hamburger {
+        display: none;
+        background: none;
+        border: none;
         cursor: pointer;
-        padding: 0.5rem 0;
-        position: relative;
-      }
-      .nav-links a::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(90deg, #e67e22, #f39c12);
-        transition: width 0.3s ease;
-      }
-      .nav-links a:hover::after,
-      .nav-links a.active::after {
-        width: 100%;
-      }
-      .nav-links a:hover,
-      .nav-links a.active {
-        color: #e67e22;
+        color: var(--text);
       }
 
-      .main-content {
-        margin-top: 80px;
-      }
-
-      .profile-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 4rem 0;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-      .profile-header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.3);
-        z-index: 1;
-      }
-      .profile-content {
-        position: relative;
-        z-index: 2;
-      }
-      .profile-image {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        margin: 0 auto 2rem;
-        display: block;
-        object-fit: cover;
-        border: 5px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease;
-      }
-      .profile-image:hover {
-        transform: scale(1.05);
-      }
-      .profile-name {
-        font-family: "Playfair Display", serif;
-        font-size: 3rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        letter-spacing: -0.02em;
-      }
-      .profile-title {
-        font-size: 1.3rem;
-        font-weight: 400;
-        margin-bottom: 0.5rem;
-        opacity: 0.9;
-      }
-      .profile-position {
-        font-size: 1.1rem;
-        font-weight: 500;
-        opacity: 0.8;
-        margin-bottom: 2rem;
-      }
-      .contact-links {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-      }
-      .contact-links a {
-        color: rgba(255, 255, 255, 0.9);
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        padding: 0.5rem 1rem;
-        border-radius: 25px;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-      .contact-links a:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-2px);
-      }
-
-      .section {
-        background: white;
-        margin: 2rem 0;
-        padding: 3rem 0;
-        border-radius: 15px;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
-        position: relative;
-        scroll-margin-top: 100px;
-      }
-      .section-content {
-        max-width: 800px;
+      /* ── LAYOUT ── */
+      .page {
+        max-width: 1100px;
         margin: 0 auto;
-        padding: 0 2rem;
+        padding: 0 1.5rem;
       }
-      .section h2 {
-        font-family: "Playfair Display", serif;
-        color: #2c3e50;
-        margin-bottom: 2rem;
-        font-size: 2.5rem;
-        font-weight: 600;
-        text-align: center;
-        position: relative;
-        letter-spacing: -0.02em;
+      .layout {
+        display: flex;
+        flex-direction: row;
+        gap: 3.5rem;
+        padding-top: 4.5rem;
+        padding-bottom: 3rem;
       }
-      .section h2::after {
-        content: "";
-        width: 60px;
-        height: 3px;
-        background: linear-gradient(90deg, #e67e22, #f39c12);
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
+
+      /* ── SIDEBAR ── */
+      aside {
+        width: 240px;
+        flex-shrink: 0;
+      }
+      .sidebar-inner {
+        position: sticky;
+        top: 4rem;
+        max-height: calc(100vh - 4rem);
+        overflow-y: auto;
+        padding-top: 2.5rem;
+        padding-bottom: 2rem;
+      }
+      .sidebar-inner::-webkit-scrollbar {
+        width: 3px;
+      }
+      .sidebar-inner::-webkit-scrollbar-thumb {
+        background: var(--border);
         border-radius: 2px;
       }
-      .intro-text {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #555;
-        margin-bottom: 2rem;
-        text-align: justify;
+
+      .sidebar-rule {
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+        margin-bottom: 1.5rem;
+      }
+      .profile-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        object-fit: cover;
+        display: block;
+        filter: grayscale(15%);
+      }
+      .profile-img-placeholder {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        background: #ddd6c8;
+        border-radius: 4px;
+        margin-bottom: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        color: var(--accent);
+      }
+      .sidebar-name {
+        font-family: "DM Serif Display", serif;
+        font-size: 2.6rem;
+        font-weight: 400;
+        line-height: 1.05;
+        color: var(--text);
+        letter-spacing: -0.02em;
+        margin-bottom: 0.25rem;
+      }
+      .sidebar-role {
+        font-size: 0.7rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--accent);
+        margin-top: 0.65rem;
+        margin-bottom: 1.25rem;
+      }
+      .sidebar-meta {
+        border-left: 3px solid var(--accent);
+        padding-left: 1rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+      .sidebar-meta p {
+        font-size: 0.82rem;
+        color: #57534e;
+      }
+      .sidebar-meta .meta-bold {
+        font-weight: 700;
+        color: var(--text);
+      }
+      .sidebar-meta .meta-loc {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-top: 0.2rem;
       }
 
-      .research-interests {
+      .sidebar-section-label {
+        font-size: 0.65rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        color: #a8a29e;
+        margin-bottom: 0.6rem;
+      }
+      .interest-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 1.5rem;
+      }
+      .interest-tag {
+        font-size: 0.65rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding: 0.3rem 0.6rem;
+        background: var(--accent);
+        color: var(--white);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--border);
+        margin-bottom: 1.5rem;
+      }
+      .stat-cell {
+        background: var(--white);
+        padding: 0.75rem 0.5rem;
+        text-align: center;
+      }
+      .stat-num {
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--text);
+      }
+      .stat-label {
+        font-size: 0.6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #a8a29e;
+        margin-top: 0.1rem;
+      }
+
+      .sidebar-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .sidebar-link {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: #57534e;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .sidebar-link:hover {
+        color: var(--accent);
+      }
+      .link-icon {
+        width: 26px;
+        height: 26px;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 0.75rem;
+        transition: background 0.2s, border-color 0.2s;
+      }
+      .sidebar-link:hover .link-icon {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+      .sidebar-link:hover .link-icon svg {
+        color: var(--white);
+      }
+      .link-icon svg {
+        color: #57534e;
+        transition: color 0.2s;
+      }
+
+      .sidebar-divider {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 1.25rem 0;
+      }
+
+      .stack-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+      }
+      .stack-item {
+        font-size: 0.8rem;
+        color: #57534e;
+        line-height: 1.5;
+      }
+      .stack-cat {
+        font-weight: 900;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-size: 0.72rem;
+      }
+
+      /* ── DIVIDER ── */
+      .vert-divider {
+        width: 1px;
+        background: var(--border);
+        align-self: stretch;
+        flex-shrink: 0;
+      }
+
+      /* ── MAIN CONTENT ── */
+      .main {
+        flex: 1;
+        min-width: 0;
+        padding-top: 2.5rem;
+        padding-bottom: 3rem;
+      }
+
+      /* ── SECTION ── */
+      .section {
+        margin-bottom: 4rem;
+      }
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+      .section-bar {
+        width: 3px;
+        height: 28px;
+        flex-shrink: 0;
+      }
+      .section-title {
+        font-size: 0.85rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        color: var(--text);
+      }
+
+      .bar-blue {
+        background: var(--blue);
+      }
+      .bar-teal {
+        background: var(--teal);
+      }
+      .bar-violet {
+        background: var(--violet);
+      }
+      .bar-amber {
+        background: var(--amber);
+      }
+      .bar-emerald {
+        background: var(--emerald);
+      }
+      .bar-rose {
+        background: var(--rose);
+      }
+
+      /* ── ABOUT ── */
+      .about-text {
+        font-size: 1rem;
+        color: #44403c;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+      .about-text a {
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .interests-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        margin: 3rem 0;
+        gap: 2rem;
+        margin-top: 1.25rem;
       }
-      .interests-column h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 1.4rem;
-        color: #2c3e50;
-        margin-bottom: 1.5rem;
-        font-weight: 500;
+      .interests-col h3 {
+        font-size: 0.78rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #a8a29e;
+        margin-bottom: 0.75rem;
       }
-      .interests-column ul {
+      .interests-col ul {
         list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
       }
-      .interests-column li {
-        margin-bottom: 1rem;
-        color: #555;
+      .interests-col li {
+        font-size: 0.9rem;
+        color: #44403c;
+        padding-left: 1.1rem;
         position: relative;
-        padding-left: 1.5rem;
-        font-weight: 400;
-        transition: all 0.3s ease;
       }
-      .interests-column li::before {
+      .interests-col li::before {
         content: "▸";
-        color: #e67e22;
         position: absolute;
         left: 0;
-        font-weight: bold;
-        font-size: 1.1rem;
-      }
-      .interests-column li:hover {
-        color: #e67e22;
-        transform: translateX(5px);
-        cursor: default;
+        color: var(--accent);
+        font-size: 0.9rem;
       }
 
-      /* Timeline */
-      #news {
-        background: #fff;
-        padding: 3rem 1.5rem;
+      /* ── PUBLICATIONS ── */
+      .pub-year {
+        font-size: 0.72rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #a8a29e;
+        margin-bottom: 1.1rem;
+        padding-left: 3.5rem;
       }
-      .timeline {
-        position: relative;
-        max-width: 900px;
-        margin: 1rem auto;
-        padding: 10px 0;
-        padding-top: 20px;
+      .pub-year-group {
+        margin-bottom: 2rem;
       }
-      .timeline::after {
-        content: "";
-        position: absolute;
-        width: 4px;
-        background: #f0f0f0;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        margin-left: -2px;
-        border-radius: 2px;
-        z-index: 0;
+      .pub-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
       }
-      .timeline-item {
-        padding: 0px 30px;
-        position: relative;
-        background-color: inherit;
-        width: 50%;
-        box-sizing: border-box;
-        margin-top: -50px;
-        z-index: 1;
+      .pub-item {
+        display: flex;
+        gap: 1.1rem;
       }
-      .timeline-item:first-child {
-        margin-top: 0;
-      }
-      .timeline-item:nth-child(odd) {
-        left: 0;
+      .pub-num {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--blue);
+        line-height: 1;
+        width: 2.5rem;
+        flex-shrink: 0;
         text-align: right;
-        padding-right: 40px;
       }
-      .timeline-item:nth-child(even) {
-        left: 50%;
-        text-align: left;
-        padding-left: 40px;
+      .pub-body {
+        flex: 1;
+        padding-top: 0.35rem;
       }
-      .timeline-dot {
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        right: -8px;
-        background-color: #fff;
-        border: 4px solid #e67e22;
-        top: 15px;
-        border-radius: 50%;
-        z-index: 2;
-        transition: all 0.3s ease;
-        box-shadow: 0 0 0 4px rgba(255, 255, 255, 1);
-      }
-      .timeline-item:nth-child(even) .timeline-dot {
-        left: -8px;
-      }
-      .timeline-date {
-        display: inline-block;
-        background: #e67e22;
-        color: #fff;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-weight: 600;
-        font-size: 0.8rem;
-        margin-bottom: 8px;
-        box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
-      }
-      .timeline-content {
-        padding: 15px;
-        background: #fff;
-        border-radius: 12px;
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        position: relative;
-      }
-      .timeline-content h3 {
-        margin: 0 0 5px 0;
-        color: #2c3e50;
-        font-size: 1.1rem;
-        font-family: "Inter", sans-serif;
+      .pub-title {
+        font-size: 1rem;
         font-weight: 700;
-      }
-      .timeline-content p {
-        margin: 0;
-        font-size: 0.95rem;
-        color: #666;
+        color: var(--text);
         line-height: 1.4;
       }
-      .timeline-item:hover {
-        z-index: 10;
+      .pub-meta {
+        font-size: 0.82rem;
+        color: #78716c;
+        margin-top: 0.4rem;
       }
-      .timeline-item:hover .timeline-dot {
-        background-color: #e67e22;
-        transform: scale(1.2);
-        box-shadow: 0 0 0 6px rgba(230, 126, 34, 0.2);
+      .pub-meta .pub-venue {
+        font-weight: 700;
       }
-      .timeline-item:hover .timeline-content {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        border-color: rgba(230, 126, 34, 0.2);
+      .pub-badge {
+        font-size: 0.6rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 0.15rem 0.45rem;
+        background: var(--blue);
+        color: var(--white);
+        vertical-align: middle;
+        margin-left: 0.4rem;
       }
-      .timeline-content::before {
-        content: " ";
-        height: 0;
-        position: absolute;
-        top: 14px;
-        width: 0;
-        z-index: 1;
-        border: medium solid white;
+      .pub-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.45rem;
       }
-      .timeline-item:nth-child(odd) .timeline-content::before {
-        right: -10px;
-        border-width: 10px 0 10px 10px;
-        border-color: transparent transparent transparent #fff;
+      .pub-link {
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--blue);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        transition: color 0.2s;
       }
-      .timeline-item:nth-child(even) .timeline-content::before {
-        left: -10px;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent #fff transparent transparent;
+      .pub-link:hover {
+        color: #1e3a8a;
       }
-      .timeline-item.older-news {
+
+      .show-more-btn {
+        display: block;
+        margin: 1.5rem auto 0;
+        padding: 0.6rem 2rem;
+        background: var(--accent);
+        color: var(--white);
+        border: none;
+        font-size: 0.8rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.15s;
+      }
+      .show-more-btn:hover {
+        background: #d35400;
+        transform: translateY(-1px);
+      }
+      .hidden {
+        display: none !important;
+      }
+      .older-pub {
         display: none;
       }
-      .timeline-item.older-news.visible-news {
-        display: block;
+      .older-pub.visible {
+        display: flex;
       }
 
-      @media screen and (max-width: 768px) {
-        .timeline::after {
-          left: 31px;
-        }
-        .timeline-item {
-          width: 100%;
-          padding-left: 70px;
-          padding-right: 25px;
-          padding-bottom: 20px;
-          margin-top: 0;
-        }
-        .timeline-item:nth-child(odd),
-        .timeline-item:nth-child(even) {
-          left: 0;
-          text-align: left;
-          padding-left: 70px;
-          padding-right: 25px;
-        }
-        .timeline-item:nth-child(odd) .timeline-dot,
-        .timeline-item:nth-child(even) .timeline-dot {
-          left: 23px;
-          right: auto;
-        }
-        .timeline-item:nth-child(odd) .timeline-content::before,
-        .timeline-item:nth-child(even) .timeline-content::before {
-          left: -10px;
-          right: auto;
-          border-width: 10px 10px 10px 0;
-          border-color: transparent #fff transparent transparent;
-        }
+      /* ── TEACHING & SERVICE ── */
+      .ts-card {
+        background: var(--white);
+        border-left: 3px solid var(--teal);
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .ts-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.35rem;
+      }
+      .ts-card-title {
+        font-size: 1.05rem;
+        font-weight: 900;
+        color: var(--text);
+      }
+      .ts-card-date {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #a8a29e;
+        flex-shrink: 0;
+      }
+      .ts-card-sub {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--teal);
+        margin-bottom: 0.9rem;
+      }
+      .ts-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+      }
+      .ts-list li {
+        display: flex;
+        gap: 0.65rem;
+        font-size: 0.92rem;
+        color: #44403c;
+        line-height: 1.55;
+      }
+      .ts-dash {
+        color: #34d399;
+        font-weight: 900;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
       }
 
-      .news-item {
-        border-bottom: 1px solid #eee;
-        padding: 2rem 0;
-        transition: all 0.3s ease;
+      /* sub-label for teaching rows */
+      .ts-sub-role {
+        font-size: 0.72rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--teal);
+        margin-top: 0.9rem;
+        margin-bottom: 0.3rem;
+        padding-top: 0.7rem;
+        border-top: 1px dashed var(--border);
       }
-      .news-item:hover {
-        background: rgba(230, 126, 34, 0.02);
-        margin: 0 -2rem;
-        padding: 2rem;
-        border-radius: 8px;
+      .ts-sub-role:first-of-type {
+        margin-top: 0;
+        border-top: none;
+        padding-top: 0;
       }
-      .news-item:last-child {
+
+      .ts-label {
+        font-size: 0.72rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #a8a29e;
+        margin: 1.75rem 0 0.8rem;
+      }
+
+      /* ── WORK EXPERIENCE ── */
+      .exp-card {
+        background: var(--white);
+        border-left: 3px solid var(--border);
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: border-color 0.2s;
+      }
+      .exp-card:hover {
+        border-left-color: var(--violet);
+      }
+      .exp-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.35rem;
+      }
+      .exp-card-title {
+        font-size: 1.05rem;
+        font-weight: 900;
+        color: var(--text);
+      }
+      .exp-card-date {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #a8a29e;
+        flex-shrink: 0;
+      }
+      .exp-card-sub {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--violet);
+        margin-bottom: 0.9rem;
+      }
+      .exp-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+      }
+      .exp-list li {
+        display: flex;
+        gap: 0.65rem;
+        font-size: 0.92rem;
+        color: #44403c;
+        line-height: 1.55;
+      }
+      .exp-dash {
+        color: #a78bfa;
+        font-weight: 900;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+      }
+
+      /* ── PEER REVIEW SERVICE ── */
+      .review-intro {
+        font-size: 0.92rem;
+        color: #57534e;
+        line-height: 1.7;
+        margin-bottom: 1.75rem;
+      }
+      .review-table-wrap {
+        background: var(--white);
+        border-top: 3px solid var(--amber);
+        overflow: hidden;
+      }
+      .review-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+      }
+      .review-table thead tr {
+        background: #fef3c7;
+        border-bottom: 1px solid #fde68a;
+      }
+      .review-table th {
+        font-size: 0.62rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--amber);
+        padding: 0.75rem 1rem;
+        text-align: left;
+      }
+      .review-table td {
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid #f5f2ec;
+        color: #44403c;
+        vertical-align: top;
+      }
+      .review-table tbody tr:last-child td {
         border-bottom: none;
       }
-      .news-date {
-        color: #e67e22;
-        font-weight: 600;
-        margin-bottom: 0.8rem;
-        font-size: 1rem;
-        letter-spacing: 0.05em;
+      .review-table tbody tr:hover td {
+        background: #fefce8;
       }
-      .news-content {
-        color: #555;
-        line-height: 1.7;
-        font-size: 1rem;
+      .review-venue {
+        font-weight: 700;
+        color: var(--text);
       }
-      .news-images {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-        margin-top: 1.5rem;
+      .review-count {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        background: var(--amber);
+        color: var(--white);
+        font-size: 0.7rem;
+        font-weight: 900;
+        border-radius: 50%;
       }
-      .news-images img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        border-radius: 12px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      }
-      .news-images img:hover {
-        transform: scale(1.03) translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-      }
-
-      /* Publications */
-      .publication-list {
-        margin-top: 2rem;
-      }
-      .publication-item {
-        margin-bottom: 2rem;
-        padding: 1.5rem;
-        background: #fafbfc;
-        border-radius: 8px;
-        border-left: 3px solid #e67e22;
-        transition: all 0.3s ease;
-      }
-      .publication-item:hover {
-        background: #f5f6f7;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      }
-      .publication-item strong {
-        color: #e67e22;
-        font-weight: 600;
-      }
-      .publication-item em {
-        color: #666;
-        font-style: italic;
+      .review-type-badge {
+        font-size: 0.6rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 0.2rem 0.5rem;
+        background: #fef3c7;
+        color: var(--amber);
+        display: inline-block;
       }
 
-      /* Older Publications — hidden by default */
-      .publication-item.older-pub {
-        display: none;
+      /* ── NEWS TIMELINE ── */
+      .timeline {
+        position: relative;
+        padding-left: 1.5rem;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--border);
+      }
+      .tl-item {
+        position: relative;
+        padding: 0 0 2rem 2rem;
         opacity: 0;
-        transform: translateY(12px);
+        transform: translateY(16px);
         transition: opacity 0.5s ease, transform 0.5s ease;
       }
-      .publication-item.older-pub.visible-pub {
-        display: block;
-      }
-      .publication-item.older-pub.animated-pub {
+      .tl-item.visible {
         opacity: 1;
         transform: translateY(0);
       }
-
-      /* Year labels */
-      .pub-year-label {
-        font-family: "Playfair Display", serif;
-        color: #2c3e50;
-        margin: 2rem 0 1rem 0;
-        font-size: 1.2rem;
-        font-weight: 600;
-        padding: 0.4rem 1rem;
-        background: linear-gradient(
-          135deg,
-          rgba(230, 126, 34, 0.1),
-          rgba(243, 156, 18, 0.05)
-        );
-        border-radius: 8px;
-        display: inline-block;
-        border-left: 3px solid #e67e22;
+      .tl-dot {
+        position: absolute;
+        left: -7px;
+        top: 4px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 3px solid var(--emerald);
+        transition: background 0.2s;
       }
-      .pub-year-label.older-pub {
+      .tl-item:hover .tl-dot {
+        background: var(--emerald);
+      }
+      .tl-date {
+        font-size: 0.7rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--white);
+        background: var(--emerald);
+        display: inline-block;
+        padding: 0.2rem 0.65rem;
+        margin-bottom: 0.5rem;
+      }
+      .tl-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 0.25rem;
+      }
+      .tl-desc {
+        font-size: 0.87rem;
+        color: #57534e;
+        line-height: 1.55;
+      }
+      .older-news {
         display: none;
       }
-      .pub-year-label.older-pub.visible-pub {
-        display: inline-block;
+      .older-news.visible {
+        display: block;
       }
 
-      /* Styled lists */
-      .styled-list {
-        margin-top: 1.5rem;
-      }
-      .styled-list h3 {
-        font-family: "Playfair Display", serif;
-        color: #2c3e50;
-        margin: 2rem 0 1rem 0;
-        font-size: 1.3rem;
-        font-weight: 500;
-      }
-      .styled-list ul {
-        list-style: none;
-        margin-left: 0;
-      }
-      .styled-list li {
-        margin-bottom: 1rem;
-        padding: 1rem 1.5rem;
-        background: rgba(230, 126, 34, 0.05);
-        border-radius: 8px;
-        border-left: 3px solid #e67e22;
-        transition: all 0.3s ease;
-      }
-      .styled-list li:hover {
-        background: rgba(230, 126, 34, 0.1);
-        transform: translateX(5px);
-      }
-      .styled-list strong {
-        color: #e67e22;
-        font-weight: 600;
-      }
-
-      /* Certificates */
-      .certificate-grid {
+      /* ── CERTIFICATES ── */
+      .cert-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.1rem;
       }
-      .certificate-item {
+      .cert-card {
+        background: var(--white);
+        border-top: 3px solid var(--rose);
+        padding: 1.25rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        max-width: 400px;
-        margin: 10px;
       }
-      .certificate-image {
+      .cert-img {
         width: 100%;
-        height: auto;
-        border-radius: 10px;
+        height: 160px;
         object-fit: cover;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: all 0.4s ease;
-        cursor: pointer;
+        border-radius: 4px;
+        margin-bottom: 0.75rem;
+        transition: transform 0.3s;
+        background: #f0ece4;
       }
-      .certificate-image:hover {
-        transform: scale(1.1);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        z-index: 10;
-        position: relative;
+      .cert-img:hover {
+        transform: scale(1.03);
       }
-      .certificate-title {
-        margin-top: 8px;
-        font-size: 1rem;
+      .cert-label {
+        font-size: 0.8rem;
         font-weight: 600;
         text-align: center;
+        color: #44403c;
+        line-height: 1.5;
+      }
+      .cert-placeholder {
+        width: 100%;
+        height: 160px;
+        background: #f0ece4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        margin-bottom: 0.75rem;
+        color: var(--rose);
+        font-size: 2rem;
       }
 
-      @media (max-width: 768px) {
-        .profile-name {
-          font-size: 2.5rem;
+      /* ── FOOTER ── */
+      footer {
+        background: #111;
+        color: #fff;
+      }
+      .footer-bar {
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+      }
+      .footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+      .footer-name {
+        font-family: "DM Serif Display", serif;
+        font-size: 2.5rem;
+        line-height: 1.1;
+        color: var(--white);
+      }
+      .footer-role {
+        font-size: 0.7rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        color: #f97316;
+        margin-top: 0.6rem;
+      }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+      .footer-links a {
+        font-size: 0.7rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #6b7280;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: #f97316;
+      }
+      .footer-bottom {
+        border-top: 1px solid #27272a;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .footer-bottom p {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #3f3f46;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 900px) {
+        .layout {
+          flex-direction: column;
         }
-        .profile-title {
-          font-size: 1.1rem;
+        aside {
+          width: 100%;
+        }
+        .sidebar-inner {
+          position: static;
+          max-height: none;
+          overflow: visible;
+        }
+        .vert-divider {
+          display: none;
+        }
+        .cert-grid {
+          grid-template-columns: 1fr;
         }
         .nav-links {
+          display: none;
+        }
+        .nav-hamburger {
+          display: block;
+        }
+        .nav-links.open {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 56px;
+          left: 0;
+          right: 0;
+          background: var(--white);
+          border-bottom: 1px solid var(--border);
+          padding: 1rem 1.5rem;
           gap: 1rem;
-          flex-wrap: wrap;
-          justify-content: center;
-          font-size: 0.85rem;
         }
-        .research-interests {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-        .news-images {
+        .interests-grid {
           grid-template-columns: 1fr;
         }
-        .contact-links {
-          gap: 1rem;
+        .review-table th:nth-child(3),
+        .review-table td:nth-child(3) {
+          display: none;
         }
-        .section h2 {
+      }
+      @media (max-width: 600px) {
+        .sidebar-name {
           font-size: 2rem;
         }
-        .section-content {
-          padding: 0 1rem;
+        .section-title {
+          font-size: 0.75rem;
         }
-        .certificate-grid {
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-        }
-      }
-
-      .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease;
-      }
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-weight: 600;
-        line-height: 1.3;
-      }
-      p {
-        font-weight: 400;
-      }
-      strong {
-        font-weight: 600;
-      }
-      .link {
-        color: #0066cc;
-        text-decoration: underline;
-        font-weight: bold;
-        transition: color 0.3s ease;
-      }
-      .link:hover {
-        color: #004080;
-      }
-
-      /* Shared show-more button style */
-      .show-more-btn {
-        display: block;
-        margin: 2rem auto;
-        padding: 0.8rem 2rem;
-        background: linear-gradient(135deg, #e67e22, #f39c12);
-        color: white;
-        border: none;
-        border-radius: 25px;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
-      }
-      .show-more-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
-        background: linear-gradient(135deg, #d35400, #e67e22);
-      }
-      .show-more-btn:active {
-        transform: translateY(0);
-      }
-      .show-more-btn.hidden {
-        display: none;
       }
     </style>
   </head>
   <body>
+    <div class="top-bar"></div>
+
     <nav>
-      <div class="container">
-        <div class="nav-container">
-          <ul class="nav-links">
-            <li><a href="#about" class="nav-link">About Me</a></li>
-            <li>
-              <a href="#work-experience" class="nav-link">Work Experience</a>
-            </li>
-            <li><a href="#publications" class="nav-link">Publications</a></li>
-            <li><a href="#teaching" class="nav-link">Teaching</a></li>
-            <li><a href="#service" class="nav-link">Service</a></li>
-            <li><a href="#news" class="nav-link">News</a></li>
-            <li><a href="#certificates" class="nav-link">Certificates</a></li>
-          </ul>
-        </div>
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">Gaurab Baral</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#teaching-service">Teaching &amp; Service</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li>
+            <a
+              href="https://scholar.google.com/citations?user=N0TDR9AAAAAJ&hl=en&oi=ao"
+              target="_blank"
+              class="scholar-btn"
+              >Scholar ↗</a
+            >
+          </li>
+        </ul>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 5h16" />
+            <path d="M4 12h16" />
+            <path d="M4 19h16" />
+          </svg>
+        </button>
       </div>
     </nav>
 
-    <div class="main-content">
-      <header class="profile-header">
-        <div class="container">
-          <div class="profile-content">
-            <img src="profile.jpg" alt="Profile Photo" class="profile-image" />
-            <h1 class="profile-name">Gaurab Baral</h1>
-            <i><p class="profile-position">baralg1@nku.edu</p></i>
-            <p class="profile-title">Northern Kentucky University</p>
-            <p class="profile-position">
-              Undergraduate Student in Data Science
-            </p>
-            <div class="contact-links">
-              <a href="mailto:gaurabusa@gmail.com">📧 Email</a>
-              <a href="https://www.linkedin.com/in/gaurab-baral-991333216/"
-                >💼 LinkedIn</a
-              >
+    <div class="page">
+      <div class="layout">
+        <!-- ══════════════════ SIDEBAR ══════════════════ -->
+        <aside>
+          <div class="sidebar-inner">
+            <div class="sidebar-rule"></div>
+
+            <div class="profile-img-placeholder">
+              <img src="profile.jpg" class="profile-img" alt="Gaurab Baral" />
+            </div>
+
+            <h1 class="sidebar-name">Gaurab<br />Baral</h1>
+            <p class="sidebar-role">Data Science Researcher · LIFE Fellow</p>
+
+            <div class="sidebar-meta">
+              <p class="meta-bold">Northern Kentucky University</p>
+              <p>B.S. Data Science</p>
+              <p>Minors: CS · Statistics · Biological Sciences</p>
+              <p>LIFE Fellow · Data Science Club President</p>
+              <p class="meta-loc">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="11"
+                  height="11"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                  />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Highland Heights, KY
+              </p>
+            </div>
+
+            <p class="sidebar-section-label">Research Interests</p>
+            <div class="interest-tags">
+              <span class="interest-tag">Machine Learning</span>
+              <span class="interest-tag">NLP</span>
+              <span class="interest-tag">Computer Vision</span>
+              <span class="interest-tag">Deep Learning</span>
+              <span class="interest-tag">Data Analytics</span>
+              <span class="interest-tag">AI Applications</span>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-cell">
+                <div class="stat-num">10+</div>
+                <div class="stat-label">Pubs</div>
+              </div>
+              <div class="stat-cell">
+                <div class="stat-num">8+</div>
+                <div class="stat-label">Reviews</div>
+              </div>
+              <div class="stat-cell">
+                <div class="stat-num">3+</div>
+                <div class="stat-label">Years</div>
+              </div>
+            </div>
+
+            <p class="sidebar-section-label">Links</p>
+            <div class="sidebar-links">
               <a
                 href="https://scholar.google.com/citations?user=N0TDR9AAAAAJ&hl=en&oi=ao"
-                >🎓 Google Scholar</a
+                target="_blank"
+                rel="noopener"
+                class="sidebar-link"
               >
-              <a href="https://orcid.org/0009-0009-5849-1360">🔗 ORCID</a>
-              <a href="resume_with_publications.pdf" download>📄 Resume</a>
+                <span class="link-icon">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    height="13"
+                    width="13"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"
+                    />
+                  </svg>
+                </span>
+                Google Scholar
+              </a>
+              <a
+                href="https://www.linkedin.com/in/gaurab-baral-991333216/"
+                target="_blank"
+                rel="noopener"
+                class="sidebar-link"
+              >
+                <span class="link-icon">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 448 512"
+                    height="13"
+                    width="13"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                    />
+                  </svg>
+                </span>
+                LinkedIn
+              </a>
+              <a
+                href="https://orcid.org/0009-0009-5849-1360"
+                target="_blank"
+                rel="noopener"
+                class="sidebar-link"
+              >
+                <span class="link-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.516.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.956-1.444 3.956-3.722s-1.597-3.722-3.956-3.722h-2.297z"
+                    />
+                  </svg>
+                </span>
+                ORCID
+              </a>
+              <a
+                href="/cdn-cgi/l/email-protection#7517140714191244351b1e005b101100"
+                class="sidebar-link"
+              >
+                <span class="link-icon">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 512 512"
+                    height="13"
+                    width="13"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="__cf_email__"
+                  data-cfemail="96f4f7e4f7faf1a7d6f8fde3b8f3f2e3"
+                  >baralg1@nku.edu</span
+                >
+              </a>
+              <a
+                href="/cdn-cgi/l/email-protection#5a3d3b2f283b382f293b1a3d373b333674393537"
+                class="sidebar-link"
+              >
+                <span class="link-icon">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 512 512"
+                    height="13"
+                    width="13"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="__cf_email__"
+                  data-cfemail="74131501061516010715341319151d185a171b19"
+                  >gaurabusa@gmail.com</span
+                >
+              </a>
+              <a
+                href="https://www.kaggle.com/itzgauurab"
+                target="_blank"
+                rel="noopener"
+                class="sidebar-link"
+              >
+                <span class="link-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    stroke="none"
+                  >
+                    <path
+                      d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.876 8.232c.08.095.105.196.031.41"
+                    />
+                  </svg>
+                </span>
+                Kaggle
+              </a>
+              <a
+                href="resume_with_publications.pdf"
+                download
+                class="sidebar-link"
+              >
+                <span class="link-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="13"
+                    height="13"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                </span>
+                Resume / CV
+              </a>
+            </div>
+
+            <hr class="sidebar-divider" />
+
+            <p class="sidebar-section-label">Tech Stack</p>
+            <div class="stack-list">
+              <p class="stack-item">
+                <span class="stack-cat">ML / AI — </span>PyTorch · Scikit-learn
+                · TensorFlow · Gemini API
+              </p>
+              <p class="stack-item">
+                <span class="stack-cat">Vision — </span>OpenCV · AWS Textract ·
+                CNN · YOLO
+              </p>
+              <p class="stack-item">
+                <span class="stack-cat">Data — </span>Pandas · NumPy ·
+                PostgreSQL · R
+              </p>
+              <p class="stack-item">
+                <span class="stack-cat">Cloud — </span>AWS EC2 · GCP · Docker ·
+                FastAPI
+              </p>
+              <p class="stack-item">
+                <span class="stack-cat">Lang — </span>Python · R · JavaScript
+              </p>
             </div>
           </div>
-        </div>
-      </header>
+        </aside>
 
-      <!-- About -->
-      <section id="about" class="section">
-        <div class="container">
-          <div class="section-content fade-in">
-            <h2>About Me</h2>
-            <p class="intro-text">
+        <div class="vert-divider"></div>
+
+        <!-- ══════════════════ MAIN ══════════════════ -->
+        <main class="main">
+          <!-- ── ABOUT ── -->
+          <section class="section" id="about">
+            <div class="section-header">
+              <div class="section-bar bar-blue"></div>
+              <h2 class="section-title">About Me</h2>
+            </div>
+            <p class="about-text">
               I am a Data Science student and
               <a
                 href="https://www.nku.edu/academics/informatics/beyond/LIFEfellows.html"
-                class="link"
                 target="_blank"
                 >LIFE Fellow</a
               >
               at Northern Kentucky University, with strong academic performance,
               leadership experience, and research involvement. I am also
-              minoring in Computer Science, Statistics and Biological Sciences.
+              minoring in Computer Science, Statistics, and Biological Sciences.
               I serve as President of the Data Science Club, tutor mathematics
               and statistics, and actively contribute to research in the College
               of Informatics.
             </p>
-            <div class="research-interests">
-              <div class="interests-column">
+            <div class="interests-grid">
+              <div class="interests-col">
                 <h3>Research Interests</h3>
                 <ul>
-                  <li>Machine Learning & AI</li>
+                  <li>Machine Learning &amp; AI</li>
                   <li>Natural Language Processing</li>
                   <li>Computer Vision</li>
                 </ul>
               </div>
-              <div class="interests-column">
+              <div class="interests-col">
                 <h3>Areas of Focus</h3>
                 <ul>
                   <li>Deep Learning</li>
-                  <li>Data Science & Analytics</li>
+                  <li>Data Science &amp; Analytics</li>
                   <li>Applications of Artificial Intelligence</li>
                 </ul>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <!-- Work Experience -->
-      <section id="work-experience" class="section">
-        <div class="container">
-          <div class="section-content fade-in">
-            <h2>Work Experience</h2>
-            <div class="news-item">
-              <div class="news-date">2025.08 – Present</div>
-              <div class="news-content">
-                <strong>Statistics Consultant - Data Analyst Intern</strong
-                ><br />
-                <em
-                  >Burkhardt Consulting Center · Contract
-                  <span>· Northern Kentucky University · On-site</span></em
-                >
-                <ul>
-                  <li>
-                    Conducted statistical analyses (Regression, ANOVA,
-                    Hypothesis Testing) to uncover patterns and support
-                    decision-making.
-                  </li>
-                  <li>
-                    Developed reports and dashboards to deliver actionable
-                    insights for DNP projects, ensuring data accuracy and timely
-                    feedback.
-                  </li>
-                </ul>
-              </div>
+          <!-- ── NEWS ── -->
+          <section class="section" id="news">
+            <div class="section-header">
+              <div class="section-bar bar-emerald"></div>
+              <h2 class="section-title">News</h2>
             </div>
-            <div class="news-item">
-              <div class="news-date">2025.05 – 2025.08</div>
-              <div class="news-content">
-                <strong>AI Software Engineering and Data Science Intern</strong
-                ><br />
-                <em
-                  >RE-Assist · Internship
-                  <span>· United States · Remote</span></em
-                >
-                <ul>
-                  <li>
-                    Used OpenCV and AWS Textract to extract fields from scanned
-                    medical forms; applied Google Gemini to understand and fill
-                    the fields intelligently.
-                  </li>
-                  <li>
-                    Built a FastAPI-based PDF auto-filler in Python; packaged
-                    with Docker and deployed serverlessly using AWS EC2.
-                  </li>
-                </ul>
+
+            <div class="timeline" id="timeline">
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Feb 2026</span>
+                <p class="tl-title">
+                  Paper Accepted &amp; Reviewer for ICCAI-2026
+                </p>
+                <p class="tl-desc">
+                  Paper accepted on hackathon multi-modal classification; also
+                  served as reviewer for ICCAI 2026.
+                </p>
               </div>
-            </div>
-            <div class="news-item">
-              <div class="news-date">2023.05 - Present</div>
-              <div class="news-content">
-                <strong>LIFE Fellow Researcher</strong><br />
-                <i
-                  ><span
-                    >Northern Kentucky University · Part-time · Hybrid</span
-                  ></i
-                ><br />
-                <ul>
-                  <li>
-                    I am working as a Student Researcher at the College of
-                    Informatics at NKU, where I contribute to innovative
-                    projects in data science and artificial intelligence.
-                  </li>
-                  <li>
-                    My work has led to the publication of several research
-                    papers and given me the opportunity to explore cutting-edge
-                    advancements in the field.
-                  </li>
-                </ul>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Jan 2026</span>
+                <p class="tl-title">Paper Accepted for EDUNINE 2026</p>
+                <p class="tl-desc">
+                  Paper on a Virtual Teaching Assistant using RAG for graduate
+                  Cybersecurity education accepted at IEEE World Engineering
+                  Education Conference.
+                </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Publications -->
-      <section id="publications" class="section">
-        <div class="container">
-          <div class="section-content fade-in">
-            <h2>Publications</h2>
-
-            <h3
-              style="
-                font-family: 'Playfair Display', serif;
-                color: #2c3e50;
-                margin: 2rem 0 1.5rem 0;
-                font-size: 1.4rem;
-              "
-            >
-              Research Papers
-            </h3>
-
-            <div class="publication-list">
-              <!-- ===== 2026 — Always Visible ===== -->
-
-              <div class="publication-item">
-                <strong>Baral, G.</strong>, Shrestha, S., Sah, M., &
-                Chattopadhyay, A. (2026). "Enhancing Cybersecurity Education
-                with Retrieval-Augmented Generation: A Virtual Teaching
-                Assistant Approach"
-                <em
-                  >Proceedings of the IEEE World Engineering Education
-                  Conference (EDUNINE).</em
-                >
-                (Upcoming publication)
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Dec 2025</span>
+                <p class="tl-title">Paper Accepted for ICSADL-2026</p>
+                <p class="tl-desc">
+                  Conference paper on Sentiment Analysis of LLM Reviews accepted
+                  at IEEE ICSADL-2026.
+                </p>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Nov 2025</span>
+                <p class="tl-title">Paper Accepted for MedPRAI-2026</p>
+                <p class="tl-desc">
+                  Hackathon analytics paper accepted at the 7th Mediterranean
+                  Conference on Pattern Recognition and AI.
+                </p>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Nov 2025</span>
+                <p class="tl-title">Paper Reviewer for WDSI 2026</p>
+                <p class="tl-desc">
+                  Reviewed 5 academic papers for the AI Applications in Business
+                  Decisions track at the 2026 WDSI Annual Conference.
+                </p>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Oct 2025</span>
+                <p class="tl-title">Speaker at Cyber18 NKU</p>
+                <p class="tl-desc">
+                  Selected as a key speaker for the Cyber18 conference at
+                  Northern Kentucky University.
+                </p>
               </div>
 
-              <div class="publication-item">
-                <strong>Baral, G.</strong>, & Zhou, J. (2026). "Predicting
-                Hackathon Success: A Multi-Modal Approach"
-                <em
-                  >Proceedings of the IEEE 12th International Conference on
-                  Computing and Artificial Intelligence (ICCAI).</em
-                >
-                (Upcoming publication)
-              </div>
-
-              <div class="publication-item">
-                <strong>Baral, G.</strong>, & Dhungana, P. (2026). "Comparative
-                Analysis of Hackathon Submissions and GitHub Repositories"
-                <em
-                  >Proceedings of the 7th Mediterranean Conference on Pattern
-                  Recognition and Artificial Intelligence (MedPRAI).</em
-                >
-                (Upcoming publication)
-              </div>
-
-              <div class="publication-item">
-                <strong>Baral, G.</strong>, Khanal, A., & Pandit, P. (2026).
-                "Sentiment Analysis of Reviews of Top Large Language Models"
-                <em
-                  >Proceedings of the IEEE 5th International Conference on
-                  Sentiment Analysis and Deep Learning (ICSADL).</em
-                >
-                (Upcoming publication)
-              </div>
-
-              <!-- ===== 2025 — Older (Hidden by default) ===== -->
-
-              <div class="publication-item older-pub">
-                <strong>Baral, G.</strong> & Zhou, J. (2025). "Forecasting
-                Sticker Sales: A Comprehensive Analysis Using Regression
-                Models."
-                <em
-                  >Proceedings of the 4th International Conference on Computing,
-                  IoT and Data Analytics (ICCIDA).</em
-                >
-                (Upcoming publication)
-              </div>
-
-              <div class="publication-item older-pub">
-                <strong>Baral, G.</strong>, Sah, M., Khanal, A., Dhonju, A., &
-                Shrestha, S. (2025). "Enhancing Emotion Classification with
-                Human-in-the-Loop Verification for Facial Expression
-                Recognition"
-                <em
-                  >Proceedings of the International Conference on Artificial
-                  Intelligence, Blockchain, and Internet of Things
-                  (AIBThings).</em
-                >
-                DOI:
-                <a
-                  href="https://ieeexplore.ieee.org/document/112961"
-                  target="_blank"
-                  >10.1109/AIBThings66987.2025.11296170</a
-                >.
-              </div>
-
-              <div class="publication-item older-pub">
-                <strong>Baral, G.</strong>, Sah, M., Khanal, A., Dhonju, A., &
-                Shrestha, S. (2025). "AutoEyeFT: A Human-in-the-Loop Continuous
-                Learning Pipeline for Robust Drowsiness Detection via Eye Region
-                Analysis"
-                <em
-                  >Proceedings of the International Conference on Artificial
-                  Intelligence, Blockchain, and Internet of Things
-                  (AIBThings).</em
-                >
-                DOI:
-                <a
-                  href="https://ieeexplore.ieee.org/abstract/document/11296184"
-                  target="_blank"
-                  >10.1109/AIBThings66987.2025.11296184</a
-                >.
-              </div>
-
-              <!-- ===== 2024 — Older (Hidden by default) ===== -->
-
-              <div class="publication-item older-pub">
-                <strong>Baral, G.</strong> & Zhou, J. (2024). "Exploring Movie
-                Recommendation Systems: A Text Mining based Overview."
-                <em
-                  >IEEE 4th International Conference on Computing and Machine
-                  Intelligence (ICMI).</em
-                >
-                DOI:
-                <a
-                  href="https://ieeexplore.ieee.org/document/11141109"
-                  target="_blank"
-                  >10.1109/ICMI65310.2025.11141109</a
-                >.
-              </div>
-
-              <div class="publication-item older-pub">
-                <strong>Baral, G.</strong>, Shrestha, S., Shrestha, A., Lama,
-                N., Zhou, J. (2024). "Drowsiness Detection Using Convolutional
-                Neural Network with Eye Feature Analysis."
-                <em
-                  >IEEE 4th International Conference on Computing and Machine
-                  Intelligence (ICMI).</em
-                >
-                DOI:
-                <a
-                  href="https://ieeexplore.ieee.org/document/11141118"
-                  target="_blank"
-                  >10.1109/ICMI65310.2025.111411185</a
-                >.
-              </div>
-
-              <div class="publication-item older-pub">
-                <strong>Baral, G.</strong> & Zhou, J. (2024). "A Data-Driven
-                Analysis of Cybersecurity Job Market Trends."
-                <em
-                  >Proceedings of the Kentucky Cybersecurity & Forensics
-                  Conference (KCFC)</em
-                >
-                DOI:
-                <a
-                  href="https://www.researchgate.net/publication/395396547_A_Data-Driven_Analysis_of_Cybersecurity_Job_Market_Trends"
-                  target="_blank"
-                  >10.13140/RG.2.2.20788.92802</a
-                >.
-              </div>
-
-              <div class="publication-item older-pub">
-                <strong>Baral, G.</strong> & Zhou, J. (2024). "A Hybrid
-                Regression Method for Predicting Housing Prices."
-                <em>AHFE International Conference, AHFE Open Access, vol 159</em
-                >. DOI:
-                <a href="http://doi.org/10.54941/ahfe1005725" target="_blank"
-                  >10.54941/ahfe1005725</a
-                >.
-              </div>
-            </div>
-            <!-- end .publication-list -->
-
-            <!-- Show Older Publications Button -->
-            <button id="showOlderPubsBtn" class="show-more-btn">
-              Show Older Publications
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Teaching -->
-      <section id="teaching" class="section">
-        <div class="container">
-          <div class="section-content fade-in">
-            <h2>Teaching</h2>
-            <div class="styled-list">
-              <h3>Teaching Assistant</h3>
-              <ul>
-                <li>
-                  <strong>INF 101</strong> Introductory Python Programming for
-                  the fall of 2023, supporting a class of 32 students by
-                  providing tutoring, grading assignments, and facilitating lab
-                  sessions.
-                </li>
-                <li>
-                  <strong>DSC 101</strong> Introductory Data Science for the
-                  fall of 2024, aiding 26 students by helping with coursework,
-                  conducting review sessions, and grading exams.
-                </li>
-                <li>
-                  <strong>Statistics Tutor</strong> Tutored undergraduate
-                  students in statistical concepts, regression analysis, and
-                  hypothesis testing, improving comprehension and academic
-                  performance through one-on-one and group sessions.
-                </li>
-              </ul>
-              <h3>Workshop Leadership</h3>
-              <ul>
-                <li>
-                  <strong>Python Programming Workshops:</strong> Leading weekly
-                  programming sessions for Data Science Club members, covering
-                  basics to advanced topics.
-                </li>
-                <li>
-                  <strong>Machine Learning Study Groups:</strong> Organizing
-                  collaborative learning sessions for students interested in ML
-                  algorithms and applications as a part of the Data Science Club
-                  at NKU.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Service -->
-      <section id="service" class="section">
-        <div class="container">
-          <div class="section-content fade-in">
-            <h2>Service</h2>
-            <div class="styled-list">
-              <h3>University Service</h3>
-              <ul>
-                <li>
-                  <strong>President, Data Science Club:</strong> Formed the
-                  student-led Data Science Club in the College of Informatics,
-                  organizing events and fostering collaboration among students.
-                </li>
-                <li>
-                  <strong>Professor Search Commitee:</strong> Served as the
-                  Student Representative on the Professor Search Committee
-                  responsible for searching candidates for the roles of
-                  Assistant Professor in Computer Science and Assistant
-                  Professor in Software Engineering at Northern Kentucky
-                  University.
-                </li>
-                <li>
-                  <strong>Student Representative:</strong> Serving on the
-                  College of Informatics Student Advisory Board, representing
-                  undergraduate student interests and concerns.
-                </li>
-              </ul>
-              <h3>Community Outreach</h3>
-              <ul>
-                <li>
-                  <strong>STEM Peer Mentor:</strong> Helping freshman students
-                  majoring in STEM navigate their college experience by
-                  providing guidance and support.
-                </li>
-                <li>
-                  <strong>Discord Paper Reviewer:</strong> Serve as a paper
-                  reviewer for a Discord server, reviewing one academic paper
-                  every Saturday.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- News -->
-      <section id="news" class="section">
-        <div class="container">
-          <div class="section-content fade-in">
-            <h2>News</h2>
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Feb 2026</div>
-                <div class="timeline-content">
-                  <h3>Paper Accepted and Reviewer for ICCAI-2026</h3>
-                  <p>
-                    Paper accepted about hackathon multi-modal classification
-                    and served as a reviewer for the International Conference on
-                    Computational Intelligence (ICCAI 2026).
-                  </p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Jan 2026</div>
-                <div class="timeline-content">
-                  <h3>Paper Accepted for EDUNINE 2026</h3>
-                  <p>
-                    Paper about "Virtual Teaching Assistant using RAG chatbot
-                    for graduate Cybersecurity classroom" accepted at IEEE World
-                    Engineering Education Conference 2026.
-                  </p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Dec 2025</div>
-                <div class="timeline-content">
-                  <h3>Paper Accepted for ICSADL-2026</h3>
-                  <p>
-                    Conference paper on Sentiment Analysis of LLM Reviews
-                    accepted at the IEEE 5th International Conference on
-                    Sentiment Analysis and Deep Learning (ICSADL-2026).
-                  </p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Nov 2025</div>
-                <div class="timeline-content">
-                  <h3>Paper Accepted for MedPRAI-2026</h3>
-                  <p>
-                    Hackathon Analytics paper accepted at the 7th Mediterranean
-                    Conference on Pattern Recognition and Artificial
-                    Intelligence (MedPRAI-2026).
-                  </p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Nov 2025</div>
-                <div class="timeline-content">
-                  <h3>Paper Reviewer for WDSI 2026</h3>
-                  <p>
-                    Reviewed 5 academic papers for the Artificial Intelligence
-                    Applications in Business Decisions track at the 2026 Annual
-                    Conference of the Western Decision Sciences Institute.
-                  </p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Oct 2025</div>
-                <div class="timeline-content">
-                  <h3>Speaker at Cyber18 NKU</h3>
-                  <p>
-                    Selected as a key speaker for the upcoming Cyber18
-                    conference at Northern Kentucky University.
-                  </p>
-                </div>
-              </div>
               <!-- Older News -->
-              <div class="timeline-item older-news">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Oct 2025</div>
-                <div class="timeline-content">
-                  <h3>Paper Reviewer for CISSE 2025</h3>
-                  <p>
-                    Serving as an academic reviewer for the Colloquium for
-                    Information Systems Security Education (CISSE).
-                  </p>
-                </div>
+              <div class="tl-item older-news">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Oct 2025</span>
+                <p class="tl-title">Paper Reviewer for CISSE 2025</p>
+                <p class="tl-desc">
+                  Serving as an academic reviewer for the Colloquium for
+                  Information Systems Security Education.
+                </p>
               </div>
-              <div class="timeline-item older-news">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Sep 2025</div>
-                <div class="timeline-content">
-                  <h3>2 Papers Accepted at AIBThings 2025</h3>
-                  <p>
-                    Research on IoT and AI applications accepted for publication
-                    and presentation.
-                  </p>
-                </div>
+              <div class="tl-item older-news">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Sep 2025</span>
+                <p class="tl-title">2 Papers Accepted at AIBThings 2025</p>
+                <p class="tl-desc">
+                  Research on IoT and AI applications accepted for publication
+                  and presentation.
+                </p>
               </div>
-              <div class="timeline-item older-news">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">July 2025</div>
-                <div class="timeline-content">
-                  <h3>Paper Accepted at ICCIDA 2025</h3>
-                  <p>
-                    Research accepted for the International Conference on
-                    Computing, IoT and Data Analytics.
-                  </p>
-                </div>
+              <div class="tl-item older-news">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Jul 2025</span>
+                <p class="tl-title">Paper Accepted at ICCIDA 2025</p>
+                <p class="tl-desc">
+                  Research accepted at the International Conference on
+                  Computing, IoT and Data Analytics.
+                </p>
               </div>
-              <div class="timeline-item older-news">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Apr 2025</div>
-                <div class="timeline-content">
-                  <h3>2 Papers Accepted at IEEE ICMICONF 2025</h3>
-                  <p>
-                    Double acceptance for research contributions at the 2025
-                    IEEE conference.
-                  </p>
-                </div>
+              <div class="tl-item older-news">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Apr 2025</span>
+                <p class="tl-title">2 Papers Accepted at IEEE ICMI 2025</p>
+                <p class="tl-desc">
+                  Double acceptance for research contributions at the 2025 IEEE
+                  conference.
+                </p>
               </div>
-              <div class="timeline-item older-news">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Mar 2025</div>
-                <div class="timeline-content">
-                  <h3>Kentucky Capitol Presentation</h3>
-                  <p>
-                    Selected to present research poster at the state capitol for
-                    the 2025 session.
-                  </p>
-                </div>
+              <div class="tl-item older-news">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Mar 2025</span>
+                <p class="tl-title">Kentucky Capitol Presentation</p>
+                <p class="tl-desc">
+                  Selected to present research poster at the state capitol for
+                  the 2025 session.
+                </p>
               </div>
-              <div class="timeline-item older-news">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Dec 2024</div>
-                <div class="timeline-content">
-                  <h3>Paper Accepted in AHFE 2024</h3>
-                  <p>
-                    Research accepted for publication in the AHFE International
-                    Conference proceedings.
-                  </p>
-                </div>
+              <div class="tl-item older-news">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Dec 2024</span>
+                <p class="tl-title">Paper Accepted in AHFE 2024</p>
+                <p class="tl-desc">
+                  Research accepted for publication in AHFE International
+                  Conference proceedings.
+                </p>
               </div>
-              <div class="timeline-item older-news">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Oct 2024</div>
-                <div class="timeline-content">
-                  <h3>Paper Accepted at KCFC 2024</h3>
-                  <p>
-                    Contribution accepted for the Kentucky Cybersecurity &
-                    Forensics Conference.
-                  </p>
-                </div>
+              <div class="tl-item older-news">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Oct 2024</span>
+                <p class="tl-title">Paper Accepted at KCFC 2024</p>
+                <p class="tl-desc">
+                  Contribution accepted for the Kentucky Cybersecurity &amp;
+                  Forensics Conference.
+                </p>
               </div>
-              <div class="timeline-item older-news">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Mar 2024</div>
-                <div class="timeline-content">
-                  <h3>Kentucky Capitol Presentation</h3>
-                  <p>
-                    Presented research findings to legislators and the public at
-                    the 2024 Capitol event.
-                  </p>
-                </div>
+              <div class="tl-item older-news">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Mar 2024</span>
+                <p class="tl-title">Kentucky Capitol Presentation</p>
+                <p class="tl-desc">
+                  Presented research findings to legislators and the public at
+                  the 2024 Capitol event.
+                </p>
               </div>
-              <div class="timeline-item older-news">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Aug 2023</div>
-                <div class="timeline-content">
-                  <h3>LIFE Fellow Recipient</h3>
-                  <p>
-                    Awarded the prestigious LIFE Fellowship at Northern Kentucky
-                    University.
-                  </p>
-                </div>
+              <div class="tl-item older-news">
+                <div class="tl-dot"></div>
+                <span class="tl-date">Aug 2023</span>
+                <p class="tl-title">LIFE Fellow Recipient</p>
+                <p class="tl-desc">
+                  Awarded the prestigious LIFE Fellowship at Northern Kentucky
+                  University.
+                </p>
               </div>
             </div>
-            <button id="showOlderNewsBtn" class="show-more-btn">
+
+            <button class="show-more-btn" id="showOlderNewsBtn">
               Show Older News
             </button>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <!-- Certificates -->
-      <section id="certificates" class="section">
-        <div class="container">
-          <div class="section-content fade-in">
-            <h2>Certificates</h2>
-            <p class="intro-text">
-              Several Certifications that I have achieved till date.
-            </p>
-            <div class="certificate-grid">
-              <div class="certificate-item">
-                <img
-                  src="ICSADL.png"
-                  alt="Certificate of Presenting at ICSADL Conference"
-                  class="certificate-image"
-                />
-                <div class="certificate-title">
-                  Certificate of Presenting at ICSADL Conference for the LLM
-                  Sentiment Analysis Paper.
+          <!-- ── PUBLICATIONS ── -->
+          <section class="section" id="publications">
+            <div class="section-header">
+              <div class="section-bar bar-blue"></div>
+              <h2 class="section-title">Publications</h2>
+            </div>
+
+            <!-- 2026 -->
+            <div class="pub-year-group">
+              <p class="pub-year">2026</p>
+              <div class="pub-list">
+                <div class="pub-item">
+                  <span class="pub-num">01</span>
+                  <div class="pub-body">
+                    <p class="pub-title">
+                      Enhancing Cybersecurity Education with Retrieval-Augmented
+                      Generation: A Virtual Teaching Assistant Approach
+                    </p>
+                    <p class="pub-meta">
+                      <strong>G. Baral</strong>, S. Shrestha, M. Sah, A.
+                      Chattopadhyay ·
+                      <span class="pub-venue">IEEE EDUNINE 2026</span
+                      ><span class="pub-badge">Upcoming</span>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="certificate-item">
-                <img
-                  src="medprai.png"
-                  alt="Certificate of Presenting at MEDPRAI Conference"
-                  class="certificate-image"
-                />
-                <div class="certificate-title">
-                  Certificate of Presenting at MEDPRAI Conference for the
-                  hackathon analytics paper.
+                <div class="pub-item">
+                  <span class="pub-num">02</span>
+                  <div class="pub-body">
+                    <p class="pub-title">
+                      Predicting Hackathon Success: A Multi-Modal Approach
+                    </p>
+                    <p class="pub-meta">
+                      <strong>G. Baral</strong>, J. Zhou ·
+                      <span class="pub-venue">IEEE ICCAI 2026</span
+                      ><span class="pub-badge">Upcoming</span>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="certificate-item">
-                <img
-                  src="iccida.jpg"
-                  alt="Certificate of Presenting at ICCIDA Conference"
-                  class="certificate-image"
-                />
-                <div class="certificate-title">
-                  Certificate of Presenting at ICCIDA Conference for the Sticker
-                  Sales Regression Paper.
+                <div class="pub-item">
+                  <span class="pub-num">03</span>
+                  <div class="pub-body">
+                    <p class="pub-title">
+                      Comparative Analysis of Hackathon Submissions and GitHub
+                      Repositories
+                    </p>
+                    <p class="pub-meta">
+                      <strong>G. Baral</strong>, P. Dhungana ·
+                      <span class="pub-venue">MedPRAI 2026</span
+                      ><span class="pub-badge">Upcoming</span>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="certificate-item">
-                <img
-                  src="kcfc.jpg"
-                  alt="Certificate of Presenting at KCFC Conference"
-                  class="certificate-image"
-                />
-                <div class="certificate-title">
-                  Certificate of Presenting at KCFC conference for
-                  "Cybersecurity Job Analysis" Paper.
-                </div>
-              </div>
-              <div class="certificate-item">
-                <img
-                  src="drowsiness_ICMI.jpg"
-                  alt="Certificate of Presenting at ICMI Conference"
-                  class="certificate-image"
-                />
-                <div class="certificate-title">
-                  Certificate of Presenting at ICMI Conference for the
-                  Drowsiness Detection Paper
-                </div>
-              </div>
-              <div class="certificate-item">
-                <img
-                  src="MRS_ICMI.jpg"
-                  alt="Certificate of Presenting at ICMI Conference"
-                  class="certificate-image"
-                />
-                <div class="certificate-title">
-                  Certificate of Presenting at ICMI Conference for the Movie
-                  Recommendation Paper
-                </div>
-              </div>
-              <div class="certificate-item">
-                <img
-                  src="dsc_club.jpg"
-                  alt="Certificate of being the best contributor for the Data Science Club"
-                  class="certificate-image"
-                />
-                <div class="certificate-title">
-                  Recognition as the outstanding contributor for NKU Data
-                  Science Club.
-                </div>
-              </div>
-              <div class="certificate-item">
-                <img
-                  src="nvidia.jpg"
-                  alt="Certificate of NVIDIA Fundamentals of Deep Learning"
-                  class="certificate-image"
-                />
-                <div class="certificate-title">
-                  Certificate of completion of NVIDIA's Fundamentals of Deep
-                  Learning.
-                </div>
-              </div>
-              <div class="certificate-item">
-                <img
-                  src="aibthings_drowsiness.png"
-                  alt="Certificate of Presenting at AIBThings Conference"
-                  class="certificate-image"
-                />
-                <div class="certificate-title">
-                  Certificate of Presenting at AIBThings Conference for the
-                  Drowsiness Paper
-                </div>
-              </div>
-              <div class="certificate-item">
-                <img
-                  src="aibthings_emotions.png"
-                  alt="Certificate of Presenting at AIBThings Conference"
-                  class="certificate-image"
-                />
-                <div class="certificate-title">
-                  Certificate of Presenting at AIBThings Conference for the
-                  Emotion Recognition Paper
+                <div class="pub-item">
+                  <span class="pub-num">04</span>
+                  <div class="pub-body">
+                    <p class="pub-title">
+                      Sentiment Analysis of Reviews of Top Large Language Models
+                    </p>
+                    <p class="pub-meta">
+                      <strong>G. Baral</strong>, A. Khanal, P. Pandit ·
+                      <span class="pub-venue">IEEE ICSADL 2026</span
+                      ><span class="pub-badge">Upcoming</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+
+            <!-- 2025 -->
+            <div class="pub-year-group">
+              <p class="pub-year older-pub">2025</p>
+              <div class="pub-list">
+                <div class="pub-item older-pub">
+                  <span class="pub-num">05</span>
+                  <div class="pub-body">
+                    <p class="pub-title">
+                      Forecasting Sticker Sales: A Comprehensive Analysis Using
+                      Regression Models
+                    </p>
+                    <p class="pub-meta">
+                      <strong>G. Baral</strong>, J. Zhou ·
+                      <span class="pub-venue">ICCIDA 2025</span
+                      ><span class="pub-badge">Upcoming</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="pub-item older-pub">
+                  <span class="pub-num">06</span>
+                  <div class="pub-body">
+                    <p class="pub-title">
+                      Enhancing Emotion Classification with Human-in-the-Loop
+                      Verification for Facial Expression Recognition
+                    </p>
+                    <p class="pub-meta">
+                      <strong>G. Baral</strong>, M. Sah, A. Khanal, A. Dhonju,
+                      S. Shrestha ·
+                      <span class="pub-venue">AIBThings 2025</span>
+                    </p>
+                    <div class="pub-links">
+                      <a
+                        href="https://ieeexplore.ieee.org/document/11296170"
+                        target="_blank"
+                        class="pub-link"
+                        >IEEE ↗</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pub-item older-pub">
+                  <span class="pub-num">07</span>
+                  <div class="pub-body">
+                    <p class="pub-title">
+                      AutoEyeFT: A Human-in-the-Loop Continuous Learning
+                      Pipeline for Robust Drowsiness Detection via Eye Region
+                      Analysis
+                    </p>
+                    <p class="pub-meta">
+                      <strong>G. Baral</strong>, M. Sah, A. Khanal, A. Dhonju,
+                      S. Shrestha ·
+                      <span class="pub-venue">AIBThings 2025</span>
+                    </p>
+                    <div class="pub-links">
+                      <a
+                        href="https://ieeexplore.ieee.org/abstract/document/11296184"
+                        target="_blank"
+                        class="pub-link"
+                        >IEEE ↗</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2024 -->
+            <div class="pub-year-group">
+              <p class="pub-year older-pub">2024</p>
+              <div class="pub-list">
+                <div class="pub-item older-pub">
+                  <span class="pub-num">08</span>
+                  <div class="pub-body">
+                    <p class="pub-title">
+                      Exploring Movie Recommendation Systems: A Text Mining
+                      based Overview
+                    </p>
+                    <p class="pub-meta">
+                      <strong>G. Baral</strong>, J. Zhou ·
+                      <span class="pub-venue">IEEE ICMI 2024</span>
+                    </p>
+                    <div class="pub-links">
+                      <a
+                        href="https://ieeexplore.ieee.org/document/11141109"
+                        target="_blank"
+                        class="pub-link"
+                        >IEEE ↗</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pub-item older-pub">
+                  <span class="pub-num">09</span>
+                  <div class="pub-body">
+                    <p class="pub-title">
+                      Drowsiness Detection Using Convolutional Neural Network
+                      with Eye Feature Analysis
+                    </p>
+                    <p class="pub-meta">
+                      <strong>G. Baral</strong>, S. Shrestha, A. Shrestha, N.
+                      Lama, J. Zhou ·
+                      <span class="pub-venue">IEEE ICMI 2024</span>
+                    </p>
+                    <div class="pub-links">
+                      <a
+                        href="https://ieeexplore.ieee.org/document/11141118"
+                        target="_blank"
+                        class="pub-link"
+                        >IEEE ↗</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pub-item older-pub">
+                  <span class="pub-num">10</span>
+                  <div class="pub-body">
+                    <p class="pub-title">
+                      A Data-Driven Analysis of Cybersecurity Job Market Trends
+                    </p>
+                    <p class="pub-meta">
+                      <strong>G. Baral</strong>, J. Zhou ·
+                      <span class="pub-venue">KCFC 2024</span>
+                    </p>
+                    <div class="pub-links">
+                      <a
+                        href="https://www.researchgate.net/publication/395396547"
+                        target="_blank"
+                        class="pub-link"
+                        >ResearchGate ↗</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pub-item older-pub">
+                  <span class="pub-num">11</span>
+                  <div class="pub-body">
+                    <p class="pub-title">
+                      A Hybrid Regression Method for Predicting Housing Prices
+                    </p>
+                    <p class="pub-meta">
+                      <strong>G. Baral</strong>, J. Zhou ·
+                      <span class="pub-venue"
+                        >AHFE International Conference, vol 159</span
+                      >
+                    </p>
+                    <div class="pub-links">
+                      <a
+                        href="http://doi.org/10.54941/ahfe1005725"
+                        target="_blank"
+                        class="pub-link"
+                        >DOI ↗</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="show-more-btn" id="showOlderPubsBtn">
+              Show Older Publications
+            </button>
+          </section>
+
+          <!-- ── TEACHING & SERVICE ── -->
+          <section class="section" id="teaching-service">
+            <div class="section-header">
+              <div class="section-bar bar-teal"></div>
+              <h2 class="section-title">Teaching &amp; Service</h2>
+            </div>
+
+            <p class="ts-label">Teaching</p>
+            <!-- Consolidated Teaching card -->
+            <div class="ts-card">
+              <div class="ts-card-header">
+                <span class="ts-card-title"
+                  >Teaching Assistant &amp; Tutor</span
+                >
+                <span class="ts-card-date">2023 – Present</span>
+              </div>
+              <p class="ts-card-sub">Northern Kentucky University</p>
+              <ul class="ts-list">
+                <li>
+                  <span class="ts-dash">—</span
+                  ><span
+                    ><strong>INF 101 (Fall 2023):</strong> TA for Introductory
+                    Python Programming — supported 32 students through tutoring,
+                    grading, and lab facilitation.</span
+                  >
+                </li>
+                <li>
+                  <span class="ts-dash">—</span
+                  ><span
+                    ><strong>DSC 101 (Fall 2024):</strong> TA for Introductory
+                    Data Science — aided 26 students with coursework, review
+                    sessions, and exam grading.</span
+                  >
+                </li>
+                <li>
+                  <span class="ts-dash">—</span
+                  ><span
+                    ><strong>Statistics Tutor (Ongoing):</strong> One-on-one and
+                    group tutoring in statistical concepts, regression analysis,
+                    and hypothesis testing.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <p class="ts-label">Leadership &amp; Clubs</p>
+            <!-- Consolidated Data Science Club card -->
+            <div class="ts-card">
+              <div class="ts-card-header">
+                <span class="ts-card-title">President — Data Science Club</span>
+                <span class="ts-card-date">2023 – Present</span>
+              </div>
+              <p class="ts-card-sub">College of Informatics · NKU</p>
+              <ul class="ts-list">
+                <li>
+                  <span class="ts-dash">—</span
+                  ><span
+                    >Founded the student-led Data Science Club, organizing
+                    events and fostering collaboration across the College of
+                    Informatics.</span
+                  >
+                </li>
+                <li>
+                  <span class="ts-dash">—</span
+                  ><span
+                    >Lead weekly Python programming workshops for members,
+                    covering topics from fundamentals to advanced ML
+                    techniques.</span
+                  >
+                </li>
+                <li>
+                  <span class="ts-dash">—</span
+                  ><span
+                    >Organize collaborative ML study groups covering algorithms
+                    and real-world applications.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="ts-card">
+              <div class="ts-card-header">
+                <span class="ts-card-title"
+                  >Representative — Google Developer Group NKU</span
+                >
+              </div>
+              <p class="ts-card-sub">Google Developer Groups · NKU Chapter</p>
+              <ul class="ts-list">
+                <li>
+                  <span class="ts-dash">—</span
+                  ><span
+                    >Represent NKU at the Google Developer Group chapter,
+                    connecting students with Google technologies, events, and
+                    developer resources.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="ts-card">
+              <div class="ts-card-header">
+                <span class="ts-card-title">COI Ambassador</span>
+              </div>
+              <p class="ts-card-sub">College of Informatics · NKU</p>
+              <ul class="ts-list">
+                <li>
+                  <span class="ts-dash">—</span
+                  ><span
+                    >Serve as an official ambassador for the College of
+                    Informatics, representing the college at outreach events and
+                    engaging prospective students.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <p class="ts-label">University Service</p>
+            <div class="ts-card">
+              <div class="ts-card-header">
+                <span class="ts-card-title"
+                  >Professor Search Committee — Student Representative</span
+                >
+              </div>
+              <p class="ts-card-sub">
+                NKU — CS &amp; Software Engineering Faculty Search
+              </p>
+              <ul class="ts-list">
+                <li>
+                  <span class="ts-dash">—</span
+                  ><span
+                    >Served as Student Representative on the search committee
+                    for Assistant Professor roles in Computer Science and
+                    Software Engineering.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="ts-card">
+              <div class="ts-card-header">
+                <span class="ts-card-title">STEM Peer Mentor</span>
+              </div>
+              <p class="ts-card-sub">NKU Mentorship Program</p>
+              <ul class="ts-list">
+                <li>
+                  <span class="ts-dash">—</span
+                  ><span
+                    >Help incoming STEM students navigate their college
+                    experience through academic guidance and peer support.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="ts-card">
+              <div class="ts-card-header">
+                <span class="ts-card-title">Peer Review Service</span>
+              </div>
+              <p class="ts-card-sub">Academic Conferences in AI, Data Science & Cybersecurity</p>
+            
+              <ul class="ts-list">
+                <li>
+                  <span class="ts-dash">—</span>
+                  <span>
+                    Reviewed 5 papers for WDSI Annual Conference (2026) — AI Applications in Business Decisions.
+                  </span>
+                </li>
+                <li>
+                  <span class="ts-dash">—</span>
+                  <span>
+                    Reviewed 1 paper for IEEE ICCAI (2026) — International Conference on Computational AI.
+                  </span>
+                </li>
+                <li>
+                  <span class="ts-dash">—</span>
+                  <span>
+                    Reviewed 1 paper for CISSE (2025) — Information Systems Security Education.
+                  </span>
+                </li>
+                
+              </ul>
+            </div>
+
+            
+          <!-- ── WORK EXPERIENCE ── -->
+          <section class="section" id="experience">
+            <div class="section-header">
+              <div class="section-bar bar-violet"></div>
+              <h2 class="section-title">Work Experience</h2>
+            </div>
+
+            <div class="exp-card">
+              <div class="exp-card-header">
+                <span class="exp-card-title">LIFE Fellow Researcher</span>
+                <span class="exp-card-date">May 2023 – Present</span>
+              </div>
+              <p class="exp-card-sub">
+                College of Informatics · NKU · Part-time · Hybrid
+              </p>
+              <ul class="exp-list">
+                <li>
+                  <span class="exp-dash">—</span
+                  ><span
+                    >Working as a Student Researcher contributing to innovative
+                    projects in data science and artificial intelligence.</span
+                  >
+                </li>
+                <li>
+                  <span class="exp-dash">—</span
+                  ><span
+                    >Work has resulted in 10+ research publications and hands-on
+                    experience with cutting-edge AI techniques.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="exp-card">
+              <div class="exp-card-header">
+                <span class="exp-card-title"
+                  >Statistics Consultant — Data Analyst Intern</span
+                >
+                <span class="exp-card-date">Aug 2025 – May 2026</span>
+              </div>
+              <p class="exp-card-sub">
+                Burkhardt Consulting Center · NKU · On-site
+              </p>
+              <ul class="exp-list">
+                <li>
+                  <span class="exp-dash">—</span
+                  ><span
+                    >Conducted statistical analyses (Regression, ANOVA,
+                    Hypothesis Testing) to uncover patterns and support
+                    decision-making.</span
+                  >
+                </li>
+                <li>
+                  <span class="exp-dash">—</span
+                  ><span
+                    >Developed reports and dashboards delivering actionable
+                    insights for DNP projects, ensuring data accuracy and timely
+                    feedback.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+
+            <div class="exp-card">
+              <div class="exp-card-header">
+                <span class="exp-card-title">KCV Innovation Fellow</span>
+                <span class="exp-card-date">Jan 2026 – Apr 2026</span>
+              </div>
+              <p class="exp-card-sub">
+                Kentucky Commercialization Ventures • Internship
+              </p>
+              <ul class="exp-list">
+                <li>
+                  <span class="exp-dash">—</span
+                  ><span
+                    >Selected for cross-functional tech commercialization team with a fast time-to-market focus; responsible for building market validation tools, conducting customer interviews, and assessing technology readiness levels.</span
+                  >
+                </li>
+                <li>
+                  <span class="exp-dash">—</span
+                  ><span
+                    >Developed and presented go-to-market strategies, including market positioning, revenue model options, and ecosystem partner maps.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="exp-card">
+              <div class="exp-card-header">
+                <span class="exp-card-title"
+                  >Software Engineering &amp; Data Science Intern</span
+                >
+                <span class="exp-card-date">May 2025 – Aug 2025</span>
+              </div>
+              <p class="exp-card-sub">RE-Assist · Remote</p>
+              <ul class="exp-list">
+                <li>
+                  <span class="exp-dash">—</span
+                  ><span
+                    >Used OpenCV and AWS Textract to extract fields from scanned
+                    medical forms; applied Google Gemini to intelligently fill
+                    extracted fields.</span
+                  >
+                </li>
+                <li>
+                  <span class="exp-dash">—</span
+                  ><span
+                    >Built a FastAPI-based PDF auto-filler in Python; packaged
+                    with Docker and deployed serverlessly using AWS EC2.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+          </section>
+
+          <!-- ── CERTIFICATES ── -->
+          <section class="section" id="certificates">
+            <div class="section-header">
+              <div class="section-bar bar-rose"></div>
+              <h2 class="section-title">Certificates</h2>
+            </div>
+
+            <div class="cert-grid">
+              <div class="cert-card">
+                <img
+                  src="ICSADL.png"
+                  alt="ICSADL Certificate"
+                  class="cert-img"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                />
+                <div class="cert-placeholder" style="display: none">🏅</div>
+                <p class="cert-label">
+                  Certificate of Presenting at ICSADL Conference — LLM Sentiment
+                  Analysis Paper
+                </p>
+              </div>
+              <div class="cert-card">
+                <img
+                  src="medprai.png"
+                  alt="MedPRAI Certificate"
+                  class="cert-img"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                />
+                <div class="cert-placeholder" style="display: none">🏅</div>
+                <p class="cert-label">
+                  Certificate of Presenting at MedPRAI Conference — Hackathon
+                  Analytics Paper
+                </p>
+              </div>
+              <div class="cert-card">
+                <img
+                  src="iccida.jpg"
+                  alt="ICCIDA Certificate"
+                  class="cert-img"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                />
+                <div class="cert-placeholder" style="display: none">🏅</div>
+                <p class="cert-label">
+                  Certificate of Presenting at ICCIDA — Sticker Sales Regression
+                  Paper
+                </p>
+              </div>
+              <div class="cert-card">
+                <img
+                  src="kcfc.jpg"
+                  alt="KCFC Certificate"
+                  class="cert-img"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                />
+                <div class="cert-placeholder" style="display: none">🏅</div>
+                <p class="cert-label">
+                  Certificate of Presenting at KCFC — Cybersecurity Job Analysis
+                  Paper
+                </p>
+              </div>
+              <div class="cert-card">
+                <img
+                  src="drowsiness_ICMI.jpg"
+                  alt="ICMI Certificate"
+                  class="cert-img"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                />
+                <div class="cert-placeholder" style="display: none">🏅</div>
+                <p class="cert-label">
+                  Certificate of Presenting at ICMI — Drowsiness Detection Paper
+                </p>
+              </div>
+              <div class="cert-card">
+                <img
+                  src="MRS_ICMI.jpg"
+                  alt="ICMI MRS Certificate"
+                  class="cert-img"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                />
+                <div class="cert-placeholder" style="display: none">🏅</div>
+                <p class="cert-label">
+                  Certificate of Presenting at ICMI — Movie Recommendation Paper
+                </p>
+              </div>
+              <div class="cert-card">
+                <img
+                  src="dsc_club.jpg"
+                  alt="DSC Club Certificate"
+                  class="cert-img"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                />
+                <div class="cert-placeholder" style="display: none">🏆</div>
+                <p class="cert-label">
+                  Outstanding Contributor Recognition — NKU Data Science Club
+                </p>
+              </div>
+              <div class="cert-card">
+                <img
+                  src="nvidia.jpg"
+                  alt="NVIDIA Certificate"
+                  class="cert-img"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                />
+                <div class="cert-placeholder" style="display: none">🎓</div>
+                <p class="cert-label">
+                  NVIDIA — Fundamentals of Deep Learning Certificate
+                </p>
+              </div>
+              <div class="cert-card">
+                <img
+                  src="aibthings_drowsiness.png"
+                  alt="AIBThings Drowsiness Certificate"
+                  class="cert-img"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                />
+                <div class="cert-placeholder" style="display: none">🏅</div>
+                <p class="cert-label">
+                  Certificate of Presenting at AIBThings — Drowsiness Detection
+                  Paper
+                </p>
+              </div>
+              <div class="cert-card">
+                <img
+                  src="aibthings_emotions.png"
+                  alt="AIBThings Emotions Certificate"
+                  class="cert-img"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                />
+                <div class="cert-placeholder" style="display: none">🏅</div>
+                <p class="cert-label">
+                  Certificate of Presenting at AIBThings — Emotion Recognition
+                  Paper
+                </p>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
     </div>
 
+    <!-- ── FOOTER ── -->
+    <footer>
+      <div class="footer-bar"></div>
+      <div class="footer-inner">
+        <div>
+          <p class="footer-name">Gaurab<br />Baral</p>
+          <p class="footer-role">Data Science Researcher · LIFE Fellow</p>
+        </div>
+        <div class="footer-links">
+          <a
+            href="https://scholar.google.com/citations?user=N0TDR9AAAAAJ&hl=en&oi=ao"
+            target="_blank"
+            >Scholar</a
+          >
+          <a
+            href="https://www.linkedin.com/in/gaurab-baral-991333216/"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <a href="https://orcid.org/0009-0009-5849-1360" target="_blank"
+            >ORCID</a
+          >
+          <a href="/cdn-cgi/l/email-protection#0e6c6f7c6f62693f4e60657b206b6a7b"
+            >Email</a
+          >
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Gaurab Baral</p>
+        <p>Northern Kentucky University</p>
+      </div>
+    </footer>
+
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const navLinks = document.querySelectorAll(".nav-link");
-
-        navLinks.forEach((link) => {
-          link.addEventListener("click", function (e) {
-            e.preventDefault();
-            navLinks.forEach((nav) => nav.classList.remove("active"));
-            this.classList.add("active");
-            const targetSection = document.querySelector(
-              this.getAttribute("href")
-            );
-            if (targetSection)
-              targetSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-          });
-        });
-
-        function updateActiveNavLink() {
-          const sections = document.querySelectorAll("section[id]");
-          const scrollPos = window.scrollY + 150;
-          sections.forEach((section) => {
-            const top = section.offsetTop;
-            const bottom = top + section.offsetHeight;
-            const id = section.getAttribute("id");
-            if (scrollPos >= top && scrollPos <= bottom) {
-              navLinks.forEach((link) => link.classList.remove("active"));
-              const activeLink = document.querySelector(`a[href="#${id}"]`);
-              if (activeLink) activeLink.classList.add("active");
-            }
-          });
-        }
-
-        // Fade-in scroll animations
-        const observer = new IntersectionObserver(
-          (entries) =>
-            entries.forEach((e) => {
-              if (e.isIntersecting) e.target.classList.add("visible");
-            }),
-          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      // Hamburger menu
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      hamburger.addEventListener("click", () =>
+        navLinks.classList.toggle("open")
+      );
+      navLinks
+        .querySelectorAll("a")
+        .forEach((a) =>
+          a.addEventListener("click", () => navLinks.classList.remove("open"))
         );
-        document
-          .querySelectorAll(".fade-in")
-          .forEach((el) => observer.observe(el));
-        window.addEventListener("scroll", updateActiveNavLink);
-        updateActiveNavLink();
 
-        // =============================================
-        // Show Older Publications
-        // =============================================
-        const showOlderPubsBtn = document.getElementById("showOlderPubsBtn");
-        const olderPubItems = document.querySelectorAll(".older-pub");
-
-        if (showOlderPubsBtn) {
-          showOlderPubsBtn.addEventListener("click", function () {
-            // Make them visible (display)
-            olderPubItems.forEach((item) => item.classList.add("visible-pub"));
-            // Staggered fade-in animation
-            requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                olderPubItems.forEach((item, i) => {
-                  setTimeout(() => item.classList.add("animated-pub"), i * 60);
-                });
-              });
-            });
-            this.classList.add("hidden");
-          });
-        }
-
-        // =============================================
-        // Show Older News
-        // =============================================
-        const showOlderNewsBtn = document.getElementById("showOlderNewsBtn");
-        const olderNewsItems = document.querySelectorAll(".older-news");
-
-        if (showOlderNewsBtn) {
-          showOlderNewsBtn.addEventListener("click", function () {
-            olderNewsItems.forEach((item) => {
-              item.classList.add("visible-news");
-              setTimeout(() => {
-                item.style.opacity = "1";
-                item.style.transform = "translateY(0)";
-              }, 50);
-            });
-            this.classList.add("hidden");
-          });
-        }
-
-        // Profile image pulse
-        const profileImg = document.querySelector(".profile-image");
-        if (profileImg) {
-          profileImg.addEventListener("click", function () {
-            this.style.animation = "pulse 0.6s ease-in-out";
-            setTimeout(() => {
-              this.style.animation = "";
-            }, 600);
-          });
-        }
-      });
-
-      // Pulse keyframe
-      const style = document.createElement("style");
-      style.textContent = `@keyframes pulse { 0%{transform:scale(1)} 50%{transform:scale(1.1)} 100%{transform:scale(1)} }`;
-      document.head.appendChild(style);
-
-      // Timeline animation
-      const timelineItems = document.querySelectorAll(".timeline-item");
-      const timelineObserver = new IntersectionObserver(
+      // Timeline intersection observer (only non-hidden items on load)
+      const tlItems = document.querySelectorAll(".tl-item:not(.older-news)");
+      const tlObserver = new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry, index) => {
-            if (
-              entry.isIntersecting &&
-              !entry.target.classList.contains("older-news")
-            ) {
-              setTimeout(() => {
-                entry.target.classList.add("visible");
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-              }, index * 100);
-              timelineObserver.unobserve(entry.target);
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => e.target.classList.add("visible"), i * 100);
+              tlObserver.unobserve(e.target);
             }
           });
         },
-        { threshold: 0.2 }
+        { threshold: 0.15 }
       );
+      tlItems.forEach((item) => tlObserver.observe(item));
 
-      timelineItems.forEach((item) => {
-        item.style.opacity = "0";
-        item.style.transform = "translateY(20px)";
-        item.style.transition = "all 0.6s ease-out";
-        timelineObserver.observe(item);
+      // Show older publications
+      const showPubsBtn = document.getElementById("showOlderPubsBtn");
+      showPubsBtn.addEventListener("click", function () {
+        document
+          .querySelectorAll(".older-pub")
+          .forEach((el) => el.classList.add("visible"));
+        this.classList.add("hidden");
+      });
+
+      // Show older news
+      const showNewsBtn = document.getElementById("showOlderNewsBtn");
+      showNewsBtn.addEventListener("click", function () {
+        const olderItems = document.querySelectorAll(".older-news");
+        olderItems.forEach((item, i) => {
+          item.classList.add("visible");
+          setTimeout(() => item.classList.add("visible"), i * 80);
+        });
+        this.classList.add("hidden");
       });
     </script>
   </body>
