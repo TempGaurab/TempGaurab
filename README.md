@@ -1,18 +1,30 @@
-👋 Hi, I’m @TempGaurab
+<p align="center">
+  <img src="./ascii-portrait.svg" width="560" alt="ASCII art portrait of TempGaurab">
+</p>
+
+<h1 align="center">👋 Hi, I’m @TempGaurab</h1>
+
+<p align="center">
+  NLP · LLM &amp; gene–disease interpretability · building at <a href="https://github.com/Nyvora-Vision-Labs">Nyvora Vision Labs</a>
+</p>
+
+---
 
 Welcome to my GitHub!
-My original account (Gaurab-B) contained a lot of my earlier projects, but unfortunately it was permanently banned. So here I am, rebuilding and continuing the journey.
 
-💡 About Me
+## 💡 About Me
 
-I primarily work in AI, Machine Learning, Computer Vision, and NLP.
+- I primarily work in **NLP**.
+- I'm always exploring new ideas to build, research, and experiment with.
+- My old account is gone for good, but the work continues stronger than ever 🚀
 
-I'm always exploring new ideas to build, research, and experiment with.
+## 🛠️ What I’m Currently Working On
 
-My old account is gone for good, but the work continues stronger than ever 🚀.
+- **LLM and gene–disease interpretability**
+- Random projects at **[Nyvora Vision Labs](https://github.com/Nyvora-Vision-Labs)** — do check it out!
 
-🛠️ What I’m Currently Working On
-
-Automatic PDF Filler & Hackathon Data Analytics Project
+## 🤝 Let's Talk
 
 If you’re interested in collaborating or just want to talk research/ideas, feel free to reach out!
+
+<p align="center"><sub>ASCII portrait made with <a href="https://nyvora-vision-labs.github.io/FaceToREADME/">FaceToREADME</a></sub></p>
