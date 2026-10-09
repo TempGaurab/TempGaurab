@@ -14,12 +14,8 @@ Welcome to my GitHub!
 ### 💡 About Me
 
 - I primarily work in **NLP**.
+- I'm currently working on **LLM and gene–disease interpretability**.
 - I'm always exploring new ideas to build, research, and experiment with.
-
-### 🛠️ Currently Working On
-
-- **LLM and gene–disease interpretability**
-- Random projects at **[Nyvora Vision Labs](https://github.com/Nyvora-Vision-Labs)** — do check it out!
 
 ### 🤝 Let's Talk
 
