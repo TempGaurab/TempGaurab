@@ -7,7 +7,7 @@
 
 ## 👋 Hi, I’m @TempGaurab
 
-NLP · LLM &amp; gene–disease interpretability · building at **[Nyvora Vision Labs](https://github.com/Nyvora-Vision-Labs)**
+**PhD CS @ UC** · NLP · LLM &amp; gene–disease interpretability · building at **[Nyvora Vision Labs](https://github.com/Nyvora-Vision-Labs)**
 
 Welcome to my GitHub!
 
@@ -15,7 +15,6 @@ Welcome to my GitHub!
 
 - I primarily work in **NLP**.
 - I'm always exploring new ideas to build, research, and experiment with.
-- My old account is gone for good, but the work continues stronger than ever 🚀
 
 ### 🛠️ Currently Working On
 
