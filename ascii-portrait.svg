@@ -1,39 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="483" viewBox="0 0 480 483" role="img" aria-label="ASCII art portrait">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="623" viewBox="0 0 480 623" role="img" aria-label="ASCII art portrait">
   <rect width="100%" height="100%" rx="9" fill="#ffffff"/>
   <defs>
-    <clipPath id="reveal"><rect x="0" y="0" width="480" height="483">
-      <animate attributeName="height" values="0;41.4;58.8;76.2;93.6;111;128.4;145.8;163.2;180.6;198;215.4;232.8;250.2;267.6;285;302.4;319.8;337.2;354.6;372;389.4;406.8;424.2;441.6;483;483" dur="4880ms" repeatCount="indefinite" fill="freeze" calcMode="discrete" keyTimes="0;0.02;0.03;0.05;0.07;0.08;0.1;0.11;0.13;0.15;0.16;0.18;0.2;0.21;0.23;0.25;0.26;0.28;0.3;0.31;0.33;0.34;0.36;0.38;0.39;0.41;0.43"/>
+    <clipPath id="reveal"><rect x="0" y="0" width="480" height="623">
+      <animate attributeName="height" values="0;41.4;58.8;76.2;93.6;111;128.4;145.8;163.2;180.6;198;215.4;232.8;250.2;267.6;285;302.4;319.8;337.2;354.6;372;389.4;406.8;424.2;441.6;459;476.4;493.8;511.2;528.6;546;563.4;580.8;623;623" dur="5520ms" repeatCount="indefinite" fill="freeze" calcMode="discrete" keyTimes="0;0.01;0.03;0.04;0.06;0.07;0.09;0.1;0.12;0.13;0.14;0.16;0.17;0.19;0.2;0.22;0.23;0.25;0.26;0.28;0.29;0.3;0.32;0.33;0.35;0.36;0.38;0.39;0.41;0.42;0.43;0.45;0.46;0.48;0.49"/>
     </rect></clipPath>
   </defs>
   <rect x="12" y="0" width="456" height="17.4" rx="2" fill="#8b5cf6" fill-opacity="0.22" opacity="0">
-    <animate attributeName="y" values="0;24;41.4;58.8;76.2;93.6;111;128.4;145.8;163.2;180.6;198;215.4;232.8;250.2;267.6;285;302.4;319.8;337.2;354.6;372;389.4;406.8;424.2;441.6;0" dur="4880ms" repeatCount="indefinite" fill="freeze" calcMode="discrete" keyTimes="0;0.02;0.03;0.05;0.07;0.08;0.1;0.11;0.13;0.15;0.16;0.18;0.2;0.21;0.23;0.25;0.26;0.28;0.3;0.31;0.33;0.34;0.36;0.38;0.39;0.41;0.43"/>
-    <animate attributeName="opacity" values="0;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;0" dur="4880ms" repeatCount="indefinite" fill="freeze" calcMode="discrete" keyTimes="0;0.02;0.03;0.05;0.07;0.08;0.1;0.11;0.13;0.15;0.16;0.18;0.2;0.21;0.23;0.25;0.26;0.28;0.3;0.31;0.33;0.34;0.36;0.38;0.39;0.41;0.43"/>
+    <animate attributeName="y" values="0;24;41.4;58.8;76.2;93.6;111;128.4;145.8;163.2;180.6;198;215.4;232.8;250.2;267.6;285;302.4;319.8;337.2;354.6;372;389.4;406.8;424.2;441.6;459;476.4;493.8;511.2;528.6;546;563.4;580.8;0" dur="5520ms" repeatCount="indefinite" fill="freeze" calcMode="discrete" keyTimes="0;0.01;0.03;0.04;0.06;0.07;0.09;0.1;0.12;0.13;0.14;0.16;0.17;0.19;0.2;0.22;0.23;0.25;0.26;0.28;0.29;0.3;0.32;0.33;0.35;0.36;0.38;0.39;0.41;0.42;0.43;0.45;0.46;0.48;0.49"/>
+    <animate attributeName="opacity" values="0;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;0" dur="5520ms" repeatCount="indefinite" fill="freeze" calcMode="discrete" keyTimes="0;0.01;0.03;0.04;0.06;0.07;0.09;0.1;0.12;0.13;0.14;0.16;0.17;0.19;0.2;0.22;0.23;0.25;0.26;0.28;0.29;0.3;0.32;0.33;0.35;0.36;0.38;0.39;0.41;0.42;0.43;0.45;0.46;0.48;0.49"/>
   </rect>
   <g clip-path="url(#reveal)" fill="#1f2328" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace" font-size="12" dominant-baseline="central" xml:space="preserve" style="white-space:pre">
-    <text x="24" y="32.7" textLength="432" lengthAdjust="spacing">    :@               @     :%%o:.   :%x,    x@#,    :%;    .</text>
-    <text x="24" y="50.1" textLength="432" lengthAdjust="spacing">                     ;x@@@@@@@@@@@@#%%:      ;       :      </text>
-    <text x="24" y="67.5" textLength="432" lengthAdjust="spacing">                  ;@@@@@@@%%%%##@@@####@@x.                 </text>
-    <text x="24" y="84.9" textLength="432" lengthAdjust="spacing">               .#@@@@@@@@@@@@@@@@@@@@@@##@#@@,              </text>
-    <text x="24" y="102.3" textLength="432" lengthAdjust="spacing">.....         @@@@@@@@@@@@@@@@@@@@@@@#@@@@@@@@#.            </text>
-    <text x="24" y="119.7" textLength="432" lengthAdjust="spacing">            .@#@@@@@@@@@@@@@@@##%%xxooo%#@@@@@@@:           </text>
-    <text x="24" y="137.1" textLength="432" lengthAdjust="spacing">        ,,  x@@@@@@@@@@@@@@@%x#@@@@@@@#%%@@@@@@@@%.         </text>
-    <text x="24" y="154.5" textLength="432" lengthAdjust="spacing">         ,: @@@#ox%%%x%###%%%%%##@#####%%#x@@@@@@@          </text>
-    <text x="24" y="171.9" textLength="432" lengthAdjust="spacing"> .   ...    @@@%:o%#@#@@@@@#xx%@@@@@@@@@@#xx@@@@@@:;o;,:o:;:</text>
-    <text x="24" y="189.3" textLength="432" lengthAdjust="spacing">;;o;:::,,.. #@@o;%%#@#@@#%%oo:,oxx%###%xxx;;@@@@@.o;,.:,.,..</text>
-    <text x="24" y="206.7" textLength="432" lengthAdjust="spacing">             @@;;oo;ooooxx;;o;ox;ox;:,...,:::@##        . ..</text>
-    <text x="24" y="224.1" textLength="432" lengthAdjust="spacing">             ##,:;;;;oox%%x@@%@@@##%xooo;;;;:@o@            </text>
-    <text x="24" y="241.5" textLength="432" lengthAdjust="spacing">    ,        :@;:;;oox%#@#@@@@@@@@#@@#xxxxoo;@@%            </text>
-    <text x="24" y="258.9" textLength="432" lengthAdjust="spacing">              @o;ooox%@@@@%%%%%%x#@@@@%xxxoooox        . .  </text>
-    <text x="24" y="276.3" textLength="432" lengthAdjust="spacing">              ;o;;oooox%xxx%%###%xo;oxxxxooxx,,             </text>
-    <text x="24" y="293.7" textLength="432" lengthAdjust="spacing">..  ...   ..    oooooxxxxxxxxxoo;;;ooxxxxxx%o               </text>
-    <text x="24" y="311.1" textLength="432" lengthAdjust="spacing">                 xxooxxoooox%%%%%xooooxx%%%x.::::::::;;::::;</text>
-    <text x="24" y="328.5" textLength="432" lengthAdjust="spacing">,,,,,,,........   %%xxxxxxx%%%%%###########        .... .  .</text>
-    <text x="24" y="345.9" textLength="432" lengthAdjust="spacing">                  :xx%%######@###@@@@#@@##, ......,..,,,,,,,</text>
+    <text x="24" y="32.7" textLength="432" lengthAdjust="spacing">    ;@              .@,     o#o;.   :#%,    x@#.    :%o.   .</text>
+    <text x="24" y="50.1" textLength="432" lengthAdjust="spacing">                     o;@@@@@@@@@@@@#%%.      ;       :      </text>
+    <text x="24" y="67.5" textLength="432" lengthAdjust="spacing">                  :#@@@@@#%%%%##@@@###@@@;                  </text>
+    <text x="24" y="84.9" textLength="432" lengthAdjust="spacing">                %@@@@@@@@@@@@@@@@@@@@@@##@@@#.              </text>
+    <text x="24" y="102.3" textLength="432" lengthAdjust="spacing">              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%             </text>
+    <text x="24" y="119.7" textLength="432" lengthAdjust="spacing">            ,@#@@@@@@@@@@@@@@@##%%%xoox%#@@@@@@@:           </text>
+    <text x="24" y="137.1" textLength="432" lengthAdjust="spacing">        .   o@@@@@@@@@@@@@@@%x#@@@@@@@#%%@@@@@@@@x          </text>
+    <text x="24" y="154.5" textLength="432" lengthAdjust="spacing">         :: @@@#ox%##%#@####%%%##@@##%%%%#%@@@@@@@          </text>
+    <text x="24" y="171.9" textLength="432" lengthAdjust="spacing"> ........   @@@%;o%%@#@@@@@#x%#@@@@@@@@@@#xx@@@@@@,:;:,,;:::</text>
+    <text x="24" y="189.3" textLength="432" lengthAdjust="spacing">,,:,...     @@@o;%%#@@@@@#%xo::o%%#####%xx;;@@@@@,o:,.,,... </text>
+    <text x="24" y="206.7" textLength="432" lengthAdjust="spacing">            .@@:;oooooooox;;;;;o;oo;:,...,:::@@#        ...,</text>
+    <text x="24" y="224.1" textLength="432" lengthAdjust="spacing">             @#,:;;;;ooxx%%@@%@@@%#%xoo;;:;;:@o@            </text>
+    <text x="24" y="241.5" textLength="432" lengthAdjust="spacing">    ,        :#;:;;oox%#@#@@@@@@@@#@@#xxxxoo;@@#            </text>
+    <text x="24" y="258.9" textLength="432" lengthAdjust="spacing">              @o;ooox%@@@@%%%%%%%#@@@@%xxxoooox        . .  </text>
+    <text x="24" y="276.3" textLength="432" lengthAdjust="spacing">              o;;;ooox%%%xx%%##%%xo;oxxxxooox:,        .    </text>
+    <text x="24" y="293.7" textLength="432" lengthAdjust="spacing">.. ....   ..   .oooooxxxxxxxxxxo;;;ooxxxxxx%x               </text>
+    <text x="24" y="311.1" textLength="432" lengthAdjust="spacing">                 xxooxxoooox%%%%%xooooxx%%%%.::::::::;;::::;</text>
+    <text x="24" y="328.5" textLength="432" lengthAdjust="spacing">,,,..,,. ...      %%xxxxxxx%%%%%###########             .   </text>
+    <text x="24" y="345.9" textLength="432" lengthAdjust="spacing">                  ;xx%%######@###@@@@#@@##: .........,,,,,,,</text>
     <text x="24" y="363.3" textLength="432" lengthAdjust="spacing">                  :xxx%%%%%##%#########%x%                  </text>
     <text x="24" y="380.7" textLength="432" lengthAdjust="spacing">..  .....        .xooxxxxx%%%%%%%%%%%%%xox,   . ..,..,....,,</text>
-    <text x="24" y="398.1" textLength="432" lengthAdjust="spacing">               x, .##xxxxxxxxxxx%%%%xxxxxx #:            . .</text>
-    <text x="24" y="415.5" textLength="432" lengthAdjust="spacing">        ..   :#@  ;;o##xxxxxxxxxxxxxxxxx#  #xx              </text>
-    <text x="24" y="432.9" textLength="432" lengthAdjust="spacing">          ,o#%%#::@%:.o#xxxxxxxxxxxxxx%#: #%;;oo.....       </text>
-    <text x="24" y="450.3" textLength="432" lengthAdjust="spacing"> .,:;:::o%%%x%%#x,@%%:.@%xxxxxxooooooox   #;;ooo::,,,,,,....</text>
+    <text x="24" y="398.1" textLength="432" lengthAdjust="spacing">               x, .##xxxxxxxxxxx%%%%xxxxx% #:              .</text>
+    <text x="24" y="415.5" textLength="432" lengthAdjust="spacing">        .    :#@  ;;o##xxxxxxxxxxxxxxxxx#  #ox              </text>
+    <text x="24" y="432.9" textLength="432" lengthAdjust="spacing">          ,x#%%#,:@%:.o#xxxxxxxxxxxxxx%#: #%;;oo,....       </text>
+    <text x="24" y="450.3" textLength="432" lengthAdjust="spacing"> .,:::::;%%xx%%#x:@%%:.@#%xxxxxxxxoxoox   #;;ooo:,,...,,..  </text>
+    <text x="24" y="467.7" textLength="432" lengthAdjust="spacing">,,:,,::;;o%##%%%#%xo;o:::ox%xxooooo;;;,xx:x:;;;;o;x#%:,,,,..</text>
+    <text x="24" y="485.1" textLength="432" lengthAdjust="spacing">:,,,,x@@@%xxxxx%#%,;:;::::,::,;o.    ;:,.:x;;;;;:,: ,,.,.,,,</text>
+    <text x="24" y="502.5" textLength="432" lengthAdjust="spacing">;:,,::;oo;oxxxxx%#, ,,,::,,. :;o%##x, .  #o:;;:;:::::.,:,.,,</text>
+    <text x="24" y="519.9" textLength="432" lengthAdjust="spacing">;;::;o;;;ooxxxxxx#,.   .,. ., :,.     ,.::;;;;::;o;::,::::,,</text>
+    <text x="24" y="537.3" textLength="432" lengthAdjust="spacing">ooo;;#;;oooooxxxxx:..   :;..,   .        oo;;;;;:;;::;o;:::,</text>
+    <text x="24" y="554.7" textLength="432" lengthAdjust="spacing">xxxxxx%xxxxxxxxxxxo , ,. ,;..   . .,;:.. %;;;;;;;;;;;ooooo;:</text>
+    <text x="24" y="572.1" textLength="432" lengthAdjust="spacing">xxxxxx#xxxxxxxxxxxx                     .%;;;;;;ooo;ox;;ooox</text>
+    <text x="24" y="589.5" textLength="432" lengthAdjust="spacing">x%%%%%%%xxxxxxxxxx#;                   .:xooooooooxo%%xxxx%#</text>
   </g>
 </svg>
